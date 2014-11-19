@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
 
   # GET /posts
   # GET /posts.json
@@ -55,10 +57,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :no_content }
-    end
+    redirect_to root_url
   end
 
   private
@@ -69,6 +68,11 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :user_id)
+      params.require(:post).permit(:content)
     end
-end
+
+    def correct_user
+      @post = Post.find_by(id: params[:id])
+      redirect_to root_url unless current_user?(@post.user)
+    end
+  end

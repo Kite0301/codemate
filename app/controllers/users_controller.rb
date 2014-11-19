@@ -57,6 +57,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @tweets = @user.tweets.paginate(page: params[:page])
+  end
+
   
 
 
