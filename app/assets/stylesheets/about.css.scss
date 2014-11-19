@@ -4,5 +4,14 @@
 
 .head-logo {
     color: blue;
+    &:hover {
+    color: green;
+    background-color: #000;
+  }
     font-size: 20px;
+  }
+
+
+  .navbar-inner{
+    background-color: #000;
   }
