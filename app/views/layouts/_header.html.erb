@@ -1,9 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to root_path, id: "logo" do %>
-        <a class = head-logo>CodeMate</a>
-      <% end %>
+      <%= link_to "CodeMate", root_path, class: "btn btn-large btn-primary" %>
+      
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
