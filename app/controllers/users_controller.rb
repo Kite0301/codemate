@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    file = params[:user][:image]
+    @user.set_image(file)
     if @user.save
       flash[:success] = "Welcome to Codemate!"
       redirect_to @user
@@ -33,29 +35,25 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    file = params[:user][:image]
+    @user.set_image(file)
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+   @user.destroy
+    flash[:success] = "User destroyed."
+    redirect_to users_url
   end
+end
 
   
 
@@ -74,4 +72,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password_digest, :image, :remember_token)
     end
-end
+
