@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :signed_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   # GET /users
   # GET /users.json
   def index
@@ -23,12 +24,13 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  def create
+   def create
     @user = User.new(user_params)
     file = params[:user][:image]
     @user.set_image(file)
     if @user.save
-      flash[:success] = "Welcome to Codemate!"
+      sign_in @user
+      flash[:success] = "Welcome to CodeMate!"
       redirect_to @user
     else
       render 'new'
@@ -61,15 +63,22 @@ end
 
   
 
+ def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
+    end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
+    # Before actions
+
     def set_user
       @user = User.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :remember_token)
+    def signed_in_user
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
     end
 
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
