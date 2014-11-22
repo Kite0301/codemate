@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @answer = Answer.new
   end
 
   # GET /posts/new
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
@@ -60,6 +62,18 @@ class PostsController < ApplicationController
     redirect_to root_url
   end
 
+  def answer
+    @post = current_user.posts.build(content: params[:post][:content])
+    @post.answer_to = params[:id]
+    if @post.save
+      flash[:success] = "Answer created!"
+      redirect_to @post
+    else
+      @posts = current_user.posts.paginate(page: params[:page])
+      render 'about/index'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -68,7 +82,8 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content)
+
+      params.require(:post).permit(:content,:title)
     end
 
     def correct_user

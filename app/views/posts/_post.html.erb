@@ -1,9 +1,13 @@
+<% if(post.title) %>
 <li>
   <%= link_to profile_image_for(post.user) %>
   <span class="user">
     <%= link_to post.user.name, post.user %>
-  </span>
-  <span class="content"><%= post.content %></span>
+  </span><br>
+  
+ <span class="title">Title: <%= link_to post.title, post %></span>
+  <span class="content">Question: <%= post.content %></span>
+  
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
   </span>
@@ -12,4 +16,7 @@
                                      data: { confirm: "You sure?" },
                                      title: post.content %>
   <% end %>
+  
 </li>
+
+<% end %>

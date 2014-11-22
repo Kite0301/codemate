@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   # GET /users/new
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-   def create
+  def create
     @user = User.new(user_params)
     file = params[:user][:image]
     @user.set_image(file)
@@ -52,34 +53,30 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
    @user.destroy
-    flash[:success] = "User destroyed."
-    redirect_to users_url
+   flash[:success] = "User destroyed."
+   redirect_to users_url
+  end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+   :password_confirmation)
+  end 
+
+  # Before actions
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def signed_in_user
+    redirect_to signin_url, notice: "Please sign in." unless signed_in?
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user?(@user)
   end
 end
-
-  def show
-
-    @posts = @user.posts.paginate(page: params[:page])
-  end
-
-  
-
- def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
-    end
-
-    # Before actions
-
-    def set_user
-      @user = User.find(params[:id])
-    end
-
-    def signed_in_user
-      redirect_to signin_url, notice: "Please sign in." unless signed_in?
-    end
-
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
-    end

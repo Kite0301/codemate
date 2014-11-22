@@ -1,0 +1,20 @@
+
+<li>
+  <%= link_to profile_image_for(answer.user) %>
+  <span class="user">
+    <%= link_to answer.user.name, answer.user %>
+  </span><br>
+  
+ 
+  <span class="content">Answer: <%= answer.content %></span>
+  
+  <span class="timestamp">
+    
+  </span>
+  <% if current_user?(answer.user) %>
+    <%= link_to "delete", answer, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: answer.content %>
+  <% end %>
+  
+</li>
