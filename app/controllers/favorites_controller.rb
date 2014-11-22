@@ -11,5 +11,7 @@ class FavoritesController < ApplicationController
   def destroy
     @post = Favorite.find(params[:id]).post
     current_user.unfavorite!(@post)
+
+    redirect_to root_path
   end
 end
