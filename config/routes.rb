@@ -13,11 +13,17 @@ Codemate::Application.routes.draw do
   resources :users
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
+  resources :users do
+    member do
+      get  :favorite
+    end
+  end
 
   resources :posts do
     member do
-      # /tweets/:id/reply
       post :answer
+      
     end
   end
 end

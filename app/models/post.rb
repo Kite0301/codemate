@@ -3,4 +3,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
   validates :content, length: { maximum: 1000 }
   default_scope -> { order('created_at DESC') }
+  has_many :favorites
+  has_many :favoriting_users, through: :favorites, source: :user
 end
