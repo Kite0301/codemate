@@ -56,6 +56,13 @@ class UsersController < ApplicationController
    flash[:success] = "User destroyed."
    redirect_to users_url
   end
+  
+  def favorite
+    @title = 'Favorite posts'
+    @post = current_user.posts.build
+    @feed_posts = current_user.favorite_posts.paginate(page: params[:page])
+    render template: 'about/index'
+  end
 
 
   private

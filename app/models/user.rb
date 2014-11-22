@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 	has_secure_password
 	validates :password, length: { minimum: 6 }
+	 has_many :favorites
+  	has_many :favorite_posts, through: :favorites, source: :post
 	
 	def set_image(file)
 		if !file.nil?
@@ -21,6 +23,18 @@ class User < ActiveRecord::Base
 	def User.encrypt(token)
 		Digest::SHA1.hexdigest(token.to_s)
 	end
+
+	def favorite?(post)
+    favorites.find_by(post_id: post.id)
+  end
+
+  def favorite!(post)
+    favorites.create!(post_id: post.id)
+  end
+
+  def unfavorite!(post)
+    favorites.find_by(post_id: post.id).destroy
+  end
 
 	private
 
