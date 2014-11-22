@@ -14,9 +14,10 @@
   <%= @post.user.name %>
 </p>
 
+<%= render @post.answers  %>
+
 <%= render 'answers/form' %>
 
-<%= render @post.answers  %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
