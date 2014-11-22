@@ -26,9 +26,15 @@
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation %>
       </div>
+      <div class="field">
+        <%= f.label :profile %><br>
+        <%= f.text_field :profile %>
+      </div>
       <div class="actions">
         <%= f.submit "登録", class: "btn btn-large btn-primary" %>
       </div>
+
+      
     <% end %>
 
   </div>

@@ -4,7 +4,12 @@
       <h1>
         <%= profile_image_for @user %>
         <%= @user.name %>
+
+        
+
       </h1>
+      <p><%= @user.profile %></p>
+
     </section>
   </aside>
   <div class="span8">
@@ -16,6 +21,7 @@
       <%= will_paginate @posts %>
     <% end %>
   </div>
+
 </div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
