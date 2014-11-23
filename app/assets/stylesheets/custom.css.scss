@@ -318,7 +318,13 @@ aside {
   color: gray;
   cursor: pointer;
 }
-
+.answer-button
+{
+  color: white;
+  background-color: rgb(107, 215, 211);
+  border-radius: 8px;
+  border: none;
+}
 .reply{
   display: none;
 }
