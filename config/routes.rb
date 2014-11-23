@@ -10,6 +10,7 @@ Codemate::Application.routes.draw do
   match '/signin', to:'sessions#new', via:'get'
   match '/signout', to:'sessions#destroy', via:'get'
   match '/search', to: 'search#index', via: 'get' 
+  
   resources :users
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
@@ -23,7 +24,7 @@ Codemate::Application.routes.draw do
   resources :posts do
     member do
       post :answer
-      
+
     end
   end
 end

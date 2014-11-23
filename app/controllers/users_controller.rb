@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to CodeMate!"
+      
       redirect_to @user
     else
       render 'new'
@@ -56,7 +57,7 @@ class UsersController < ApplicationController
    flash[:success] = "User destroyed."
    redirect_to users_url
   end
-  
+
   def favorite
     @title = 'Favorite posts'
     @post = current_user.posts.build
