@@ -15,8 +15,9 @@
                                      data: { confirm: "You sure?" },
                                      title: post.content %>
   <% end %>
-  <%= pluralize(post.favorites.count, "favorite") %>
-  
+  <div id="favorite_<%= post.id %>" class="favorite-count">
+    <%= pluralize(post.favorites.count, "favorite") %>
+  </div>
 </li>
 
 <% end %>

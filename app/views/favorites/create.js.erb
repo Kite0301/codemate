@@ -1,2 +1,2 @@
-$('#post_<%= @post.id %>').html('<%= escape_javascript(render("favorites/favorite_btn", post: @post)) %>')
-$('#favorites').text('<%= current_user.favorites.count %>')
+$('#post_<%= @post.id %>').html('<%= escape_javascript(render("favorites/favorite_btn", post: @post)) %>');
+$('#favorite_<%= @post.id %>').text('<%= pluralize(@post.favorites.count, "favorite") %>');
