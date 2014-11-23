@@ -1,20 +1,20 @@
-<h1>Sign in</h1>
+<h1>ログイン</h1>
 
 <div class="row">
   <div class="span6 offset3">
   	<!-- 値を送りたいときはform_for -->
     <%= form_for(:session, url: sessions_path) do |f| %>
 	<div class="field">
-       	<%= f.label :email %><br>
+       	<%= f.label :メールアドレス %><br>
         <%= f.text_field :email %>
      </div>
      <div class="field">
-        <%= f.label :password %>
+        <%= f.label :パスワード %>
         <%= f.password_field :password %>
      </div>
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+      <%= f.submit "ログイン", class: "btn btn-large btn-primary" %>
     <% end %>
 <!-- routesをみて、最後にpathをつけるだけで、飛んでくれます。 -->
-    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+    <p>初めてですか？ <%= link_to "新規登録はこちら", new_user_path %></p>
   </div>
 </div>

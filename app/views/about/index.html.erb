@@ -2,7 +2,7 @@
 <% if signed_in?  %>
 <div class="row">
   <aside class="span4">
-    
+
     <section>
       <%= render 'shared/user_info' %>
     </section>
@@ -37,6 +37,16 @@
     <div class="col-md-9 content-area">
       <h2>最新の質問</h2>
 
+      <div class="span8 toplist">
+            <% if @feed_posts.any? %>
+            <h3>Posts</h3>
+            <ol class="microposts">
+              <%= render @feed_posts %>
+            </ol>
+            <%= will_paginate @feed_posts %>
+            <% end %>
+          </div>
+
         <!-- 
         <a href="">XHTML+CSSレイアウトについて</a><br>
         <a href="">インラインフレーム内のcssを親フレームに適用する</a><br>
@@ -49,7 +59,7 @@
         <a href="">HTML5を守ったアフィリエイトサイトは難しい？</a><br>
         <a href="">DOCTYPEを無視して強制的チェックをやめたい</p>
         -->
-        <table class="table">
+        <!-- <table class="table">
           <thead>
             <tr>
               <th>#</th>
@@ -78,7 +88,10 @@
               <td>@twitter</td>
             </tr>
           </tbody>
-        </table>      </div><!--/.content-area-->
+        </table>      
+      </div> -->
+
+      <!--/.content-area-->
         <div class="col-md-3 sidebar">
           <aside>
             <h4>カテゴリへのリンク</h4>
@@ -101,6 +114,7 @@
               <li><a href="">記事のタイトルタイトル</a></li>
             </ul>
           </aside>
+
         </div><!--/.sidebar-->
       </div>
     </div><!--/.main-content-->

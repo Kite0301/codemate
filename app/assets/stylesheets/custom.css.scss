@@ -14,6 +14,34 @@ $grayMediumLight: #eaeaea;
 //   margin: 0;
 //   padding: 0;
 // }
+.favorite-count{
+  display: inline-block;
+}
+.post-show
+{
+  background-color: rgba(229, 229, 229, 0.35);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+.post-title
+{
+  display: inline;
+  font-size: 20px;
+}
+#main-logo
+{
+  float: left;
+  margin-right: 10px;
+  font-size: 2.0em;
+  color: #D8ACBE;
+  /* text-transform: uppercase; */
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1;
+}
 
 
 .search-input{
@@ -140,6 +168,10 @@ footer {
 
 
 /* sidebar */
+
+.sidebar {
+  float: left;
+}
 
 aside {
   section {
@@ -290,34 +322,42 @@ aside {
   color: gray;
   cursor: pointer;
 }
-
+.answer-button
+{
+  color: white;
+  background-color: rgb(107, 215, 211);
+  border-radius: 8px;
+  border: none;
+}
 .reply{
   display: none;
 }
 
 div.jumbotron {
   // background: url("img/asahi2.jpg");
-  background-color: #FFEFDB;
+  background-color: #f0f0f0;
   color: black;
   }
 
 .subtitle {
-  margin-right: 6px;
-  margin-right: 6px;
-  color: red;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 //   div .container {
 //     margin-top: 8%;
 //   }
 
-//   div .midashi-btn {
-//     border: 1px solid #fff;
-//     color: #fff;
-//     border-radius: 0;
-//   }
+  div .midashi-btn {
+    border: 1px solid red;
+    color: green;
+    border-radius: 10;
+  }
 
-//   div .midashi-btn:hover {
-//     color: #0089ff;
-//     border-color: #0089ff;
-//   }
+  div .midashi-btn:hover {
+    color: #0089ff;
+    border-color: #0089ff;
+  }
 
+.toplist{
+  float: left;
+}

@@ -6,13 +6,13 @@
   </span><br>
   
  
-  <span class="content">Answer: <%= answer.content %></span>
+  <span class="content">回答: <%= answer.content %></span>
   
   <span class="timestamp">
     
   </span>
   <% if current_user?(answer.user) %>
-    <%= link_to "delete", answer, method: :delete,
+    <%= link_to "回答を削除", answer, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: answer.content %>
   <% end %>

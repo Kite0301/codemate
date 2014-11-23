@@ -5,29 +5,29 @@
       <%= render 'shared/error_messages', object: f.object %>
 
       <div class="field">
-        <%= f.label :name %><br>
+        <%= f.label :名前 %><br>
         <%= f.text_field :name %>
       </div>
 
      
       <div class="field">
-        <%= f.label :image %><br>
+        <%= f.label :プロフィール画像 %><br>
         <%= f.file_field :image %>
       </div>
       <div class="field">
-        <%= f.label :email %><br>
+        <%= f.label :メールアドレス %><br>
         <%= f.text_field :email %>
       </div>
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :パスワード %>
         <%= f.password_field :password %>
       </div>
       <div class="field">
-        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.label :password_confirmation, "パスワード（確認）" %>
         <%= f.password_field :password_confirmation %>
       </div>
       <div class="field">
-        <%= f.label :profile %><br>
+        <%= f.label :プロフィール %><br>
         <%= f.text_field :profile %>
       </div>
       <div class="actions">
