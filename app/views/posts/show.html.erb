@@ -1,18 +1,22 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Title:</strong>
-  <%= link_to @post.title %>
-</p>
+<div class="post-show">
+	<p id="notice"><%= notice %></p>
+	<p>
+		<h1>Question</h1>
+		<div class="post-title">質問 :</div>
+	  <%= link_to @post.title %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+	</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.name %>
-</p>
+	<p>
+	  <strong>質問内容:</strong>
+	  <%= @post.content %>
+	</p>
+
+	<p>
+	  <strong>User:</strong>
+	  <%= @post.user.name %>
+	</p>
+</div>
 
 <%= render @post.answers  %>
 

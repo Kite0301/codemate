@@ -17,7 +17,18 @@ $grayMediumLight: #eaeaea;
 .favorite-count{
   display: inline-block;
 }
-
+.post-show
+{
+  background-color: rgba(229, 229, 229, 0.35);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+.post-title
+{
+  display: inline;
+  font-size: 20px;
+}
 #main-logo
 {
   float: left;

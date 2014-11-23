@@ -56,7 +56,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer.destroy
     respond_to do |format|
-      format.html { redirect_to answers_url }
+      format.html { redirect_to @answer.post }
       format.json { head :no_content }
     end
   end
