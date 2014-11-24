@@ -169,6 +169,10 @@ footer {
 
 /* sidebar */
 
+.sidebar {
+  float: left;
+}
+
 aside {
   section {
     padding: 10px 0;
@@ -331,22 +335,29 @@ aside {
 
 div.jumbotron {
   // background: url("img/asahi2.jpg");
-  background-color: #FFEFDB;
+  background-color: #f0f0f0;
   color: black;
   }
 
+.subtitle {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 //   div .container {
 //     margin-top: 8%;
 //   }
 
-//   div .midashi-btn {
-//     border: 1px solid #fff;
-//     color: #fff;
-//     border-radius: 0;
-//   }
+  div .midashi-btn {
+    border: 1px solid red;
+    color: green;
+    border-radius: 10;
+  }
 
-//   div .midashi-btn:hover {
-//     color: #0089ff;
-//     border-color: #0089ff;
-//   }
+  div .midashi-btn:hover {
+    color: #0089ff;
+    border-color: #0089ff;
+  }
 
+.toplist{
+  float: left;
+}

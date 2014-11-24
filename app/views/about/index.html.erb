@@ -1,41 +1,53 @@
 
 <% if signed_in?  %>
-  <div class="row">
-    <aside class="span4">
-      
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
+<div class="row">
+  <aside class="span4">
 
-      <section>
-        <%= render 'posts/form' %>
-      </section>
-    </aside>
-    <div class="span8">
-      <% if @feed_posts.any? %>
-        <h3>Posts</h3>
-        <ol class="microposts">
-          <%= render @feed_posts %>
-        </ol>
-        <%= will_paginate @feed_posts %>
-      <% end %>
-    </div>
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+
+    <section>
+      <%= render 'posts/form' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @feed_posts.any? %>
+    <h3>Posts</h3>
+    <ol class="microposts">
+      <%= render @feed_posts %>
+    </ol>
+    <%= will_paginate @feed_posts %>
+    <% end %>
   </div>
+</div>
 
 <% else %>
 
 <div class="jumbotron">
-    <div class="container">
-      <h1>CodeMateへようこそ。</h1>
-      <p>日本中のプログラマーのためのサイトです。コードを書いていて行き詰まってしまった時、CodeMateがあればもう１人で悩むことはありません。CodeMateにはプログラマーによる悩みとその答えが集約されています。どうぞ自分の問題の解決に役立つ質問を探してみてください。きっと見つかることでしょう。見つからない、そんな時には是非とも新たに質問を投稿して、CodeMateに新たな１ページを付け加えてやってください。</p>
-      <p><a class="btn btn-lg midashi-btn" role="button">もっと詳しく &raquo;</a></p>
-    </div>
+  <div class="container">
+    <h1>CodeMateへようこそ。</h1>
+    <p class = "subtitle">日本中のプログラマーのためのサイトです。コードを書いていて行き詰まってしまった時、CodeMateがあればもう１人で悩むことはありません。CodeMateにはプログラマーによる悩みとその答えが集約されています。どうぞ自分の問題の解決に役立つ質問を探してみてください。きっと見つかることでしょう。見つからない、そんな時には是非とも新たに質問を投稿して、CodeMateに新たな１ページを付け加えてやってください。</p>
+    <p><a class="btn btn-lg midashi-btn" role="button">もっと詳しく &raquo;</a></p>
   </div>
+</div>
 
-  <div class="container main-content">
-    <div class="row">
-      <div class="col-md-9 content-area">
-        <h2>最新の質問</h2>
+<div class="container main-content">
+  <div class="row">
+    <div class="col-md-9 content-area">
+      <h2>最新の質問</h2>
+
+      <div class="span8 toplist">
+            <% if @feed_posts.any? %>
+            <h3>Posts</h3>
+            <ol class="microposts">
+              <%= render @feed_posts %>
+            </ol>
+            <%= will_paginate @feed_posts %>
+            <% end %>
+          </div>
+
+        <!-- 
         <a href="">XHTML+CSSレイアウトについて</a><br>
         <a href="">インラインフレーム内のcssを親フレームに適用する</a><br>
         <a href="">cssの読み込み優先順位</a><br>
@@ -46,31 +58,64 @@
         <a href="">なにを勉強すればいいでしょうか</a><br>
         <a href="">HTML5を守ったアフィリエイトサイトは難しい？</a><br>
         <a href="">DOCTYPEを無視して強制的チェックをやめたい</p>
+        -->
+        <!-- <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>      
+      </div> -->
 
-      </div><!--/.content-area-->
-      <div class="col-md-3 sidebar">
-        <aside>
-          <h4>カテゴリへのリンク</h4>
-          <ul class="list-unstyled">
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-          </ul>
-        </aside>
+      <!--/.content-area-->
+        <div class="col-md-3 sidebar">
+          <aside>
+            <h4>カテゴリへのリンク</h4>
+            <ul class="list-unstyled">
+              <li><a href="">Link</a></li>
+              <li><a href="">Link</a></li>
+              <li><a href="">Link</a></li>
+              <li><a href="">Link</a></li>
+              <li><a href="">Link</a></li>
+            </ul>
+          </aside>
 
-        <aside>
-          <h4>新着記事</h4>
-          <ul class="list-unstyled">
-            <li><a href="">記事のタイトルタイトル</a></li>
-            <li><a href="">記事のタイトルタイトル</a></li>
-            <li><a href="">記事のタイトルタイトル</a></li>
-            <li><a href="">記事のタイトルタイトル</a></li>
-            <li><a href="">記事のタイトルタイトル</a></li>
-          </ul>
-        </aside>
-      </div><!--/.sidebar-->
-    </div>
-  </div><!--/.main-content-->
-<% end %>
+          <aside>
+            <h4>新着記事</h4>
+            <ul class="list-unstyled">
+              <li><a href="">記事のタイトルタイトル</a></li>
+              <li><a href="">記事のタイトルタイトル</a></li>
+              <li><a href="">記事のタイトルタイトル</a></li>
+              <li><a href="">記事のタイトルタイトル</a></li>
+              <li><a href="">記事のタイトルタイトル</a></li>
+            </ul>
+          </aside>
+
+        </div><!--/.sidebar-->
+      </div>
+    </div><!--/.main-content-->
+    <% end %>

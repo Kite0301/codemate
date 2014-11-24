@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20141122103141) do
     t.datetime "updated_at"
   end
 
+  add_index "favorites", ["post_id"], name: "index_favorites_on_post_id"
+  add_index "favorites", ["user_id", "post_id"], name: "index_favorites_on_user_id_and_post_id", unique: true
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
+
   create_table "posts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
