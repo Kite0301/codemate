@@ -209,13 +209,192 @@ footer {
 }
 
 .footer-item{
-    float: right;
+  float: right;
   font-family: Hiragino Mincho ProN;
   padding-right: 30px;
 }
 
 
 // ここまでフッターフッターフッターフッターフッター
+
+// 説明ページ"explanation"ここから
+
+.ex-top {
+    // background-size: 100% 100%;
+    height: 700px;
+    // background-image: url(/assets/okinawa1.jpg);
+    background-color: #08192D;
+    color: white;
+    border: none;
+    margin-top: 48px;
+  }
+
+  .ex-top h1 {
+    margin-top: 100px;
+    font-size:50px;
+    font-family: Hiragino Mincho ProN;
+  }
+
+  .ex-subtitle {
+  // text-align: center;
+  font-family: Hiragino Mincho ProN;
+  font-size: 1.75em;
+  margin-top: 120px;
+}
+
+.main-logo {
+  // position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.codemate-logo {
+  
+}
+
+
+// ここから説明が始まる
+// 検索
+.ex-search {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-search h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 質問
+.ex-post {
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-post h1 {
+  margin-top: 50px;
+  font-size:30px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// タグ
+.ex-tag {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-tag h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 返事
+.ex-reply{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-reply h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 編集
+.ex-edit {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-edit h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 回答
+.ex-answer{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-answer h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 評価
+.ex-good {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-good h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// レベル
+.ex-level{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-level h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 称号
+.ex-status {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-status h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// スタート
+.ex-start{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-start h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+// 説明ページ"explanation"ここまで
 
 /* sidebar */
 
@@ -563,7 +742,7 @@ label {
 
 .hajimetedesuka {
   margin-top: 20px;
-margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .newuserArea {
@@ -578,3 +757,5 @@ margin-bottom: 50px;
 .return-btn {
   font-size: 18px;
 }
+
+
