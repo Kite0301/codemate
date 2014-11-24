@@ -523,8 +523,17 @@ div .midashi-btn {
   padding-top: 48px;
 }
 
-.login-main {
+.form-main {
   font-family: Hiragino Mincho ProN;
+}
+
+.form-main form {
+  margin-bottom: 30px;
+}
+
+.form-main .actions {
+  margin-bottom: 35px;
+
 }
 
 label {
@@ -547,7 +556,25 @@ label {
   margin-bottom: 20px;
 }
 
+.field label {
+  margin-bottom: 8px;
+
+}
+
 .hajimetedesuka {
   margin-top: 20px;
 margin-bottom: 50px;
+}
+
+.newuserArea {
+
+}
+
+.newuserArea h1 {
+  padding-top: 95px;
+  margin-bottom: 48px;
+} 
+
+.return-btn {
+  font-size: 18px;
 }
