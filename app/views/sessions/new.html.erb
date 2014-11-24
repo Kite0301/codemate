@@ -1,20 +1,26 @@
+<section class = "loginArea">
 <h1>ログイン</h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span6 offset3 login-main">
   	<!-- 値を送りたいときはform_for -->
     <%= form_for(:session, url: sessions_path) do |f| %>
-	<div class="field">
-       	<%= f.label :メールアドレス %><br>
+	<div class = "wirteArea">
+  <div class="field">
+       	<%= f.label :メールアドレス %>
         <%= f.text_field :email %>
      </div>
      <div class="field">
         <%= f.label :パスワード %>
         <%= f.password_field :password %>
      </div>
+
+   </div>
       <%= f.submit "ログイン", class: "btn btn-large btn-primary" %>
     <% end %>
 <!-- routesをみて、最後にpathをつけるだけで、飛んでくれます。 -->
-    <p>初めてですか？ <%= link_to "新規登録はこちら", new_user_path %></p>
+    <p class = "hajimetedesuka">初めてですか？ <%= link_to "新規登録はこちら", new_user_path %></p>
   </div>
 </div>
+
+</section>

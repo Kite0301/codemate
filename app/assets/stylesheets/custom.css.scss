@@ -10,6 +10,23 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
+html, body
+{
+  height: 100%;
+}
+
+#contents
+{
+  min-height: 100%;
+  position: relative;
+  background-color: #FDF1F2;
+}
+
+main
+{
+  padding-bottom: 71px;
+}
+
 // *{
 //   margin: 0;
 //   padding: 0;
@@ -65,10 +82,6 @@ $grayMediumLight: #eaeaea;
 
 html {
   overflow-y: scroll;
-}
-
-body {
-  padding-top: 60px;
 }
 
 section {
@@ -143,24 +156,28 @@ header {
   color: 622954;
 }
 
-/* footer */
+// ここからフッターフッターフッターフッターフッター
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
-    color: $gray;
+    color: white;
     &:hover {
-      color: $grayDarker;
+      color: white;
+      text-decoration: underline;
     }
   }
   small {
     float: left;
   }
   ul {
-    float: right;
+    padding-bottom: 30px;
     list-style: none;
     li {
       float: left;
@@ -169,20 +186,52 @@ footer {
   }
 }
 
+.footer {
+  height: 30px;
+  margin-top: 0px;
+  border-top-width: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // padding-right: 50px;
+  border-top: 1px solid #eaeaea;
+  color: #999999;
+  background-color: #08192D;
+}
+
+.footer-logo {
+  margin-left: 150px;
+  width: 100px;
+  float: left;
+  margin-bottom: 0px;
+  font-family: Georgia, Serif;
+  font-style: italic;
+  font-size: 1.7em;
+}
+
+.footer-item{
+    float: right;
+  font-family: Hiragino Mincho ProN;
+  padding-right: 30px;
+}
+
+
+// ここまでフッターフッターフッターフッターフッター
 
 /* sidebar */
 
 .sidebar {
   float: right;
   margin-left: 0px;
-margin-top: 80px;
-margin-right: 0px;
-background-color: rgba(0, 0, 0, 0.11);
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 10px;
-padding-bottom: 10px;
+  margin-top: 80px;
+  margin-right: 0px;
+  background-color: rgba(0, 0, 0, 0.11);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
+
 
 aside {
   section {
@@ -351,7 +400,7 @@ div.top-back {
   color: black;
   width : 100%;
   // height: 1000px;
-  }
+}
 
 .subtitle {
   margin-left: 10px;
@@ -367,7 +416,7 @@ div.top-back {
 //     margin-top: 8%;
 //   }
 
-  div .midashi-btn {
+div .midashi-btn {
     // border: 1px solid red;
     color: black;
     border-radius: 0;
@@ -382,40 +431,36 @@ div.top-back {
     border-color: #bf404f;
   }
 
-.toplist{
-  float: left;
-}
+  .toplist{
+    float: left;
+  }
 
-.topArea {
-  background-size: 100% 100%;
-  height: 600px;
-  background-image: url(/assets/asahi.jpg);
-  background-color: #08192D;
-  color: white;
-  border: none;
-}
+  .topArea {
+    background-size: 100% 100%;
+    height: 600px;
+    background-image: url(/assets/asahi.jpg);
+    background-color: #08192D;
+    color: white;
+    border: none;
+  }
 
-.topArea h1 {
-  font-family: Georgia, Serif;
-  font-weight: normal;
-  font-size: 55px;
+  .topArea h1 {
+    font-family: Georgia, Serif;
+    font-weight: normal;
+    font-size: 55px;
   // font-style: italic;
   
-margin-top: 100px;
-margin-bottom: 100px;
-color: #bf404f;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #bf404f;
 
-}
-
-body {
-padding-top: 48px;
 }
 
 .navbar {
-    background-color: #bf404f;
-    border: none;
-    height: 48px;
-  }
+  background-color: #bf404f;
+  border: none;
+  height: 48px;
+}
 
 .subtitle {
   font-family: Georgia, Serif;
@@ -423,11 +468,11 @@ padding-top: 48px;
 }
 
 .navbar-inverse .nav > li > a {
-color: white;
-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   &:hover {
-  color:white;
-  text-decoration: underline;
+    color:white;
+    text-decoration: underline;
   }
 }
 
@@ -436,29 +481,20 @@ text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .about-timeline {
-margin-top: 80px;
-margin-bottom: 40px;
-margin-left: 0px;
-margin-right: 40px;
-background-color: rgba(223, 159, 167, 0.43);
-padding-left: 15px;
-border-top-width: 15px;
-padding-top: 15px;
-padding-right: 15px;
-padding-bottom: 15px;;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  margin-left: 0px;
+  margin-right: 40px;
+  background-color: rgba(223, 159, 167, 0.43);
+  padding-left: 15px;
+  border-top-width: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;;
 
 }
 
-.footer {
-  height: 30px;
-margin-top: 0px;
-border-top-width: 0px;
-padding-top: 25px;
-padding-right: 50px;
-border-top: 1px solid #eaeaea;
-color: #999999;
-background-color: none;
-}
+
 
 .naiyou-btn {
   height: 40px;
@@ -473,4 +509,45 @@ background-color: none;
 .naiyou-btn a {
   color: white;
 
+}
+
+.loginArea {
+  background-color: #FDF1F2;
+
+}
+
+.loginArea h1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: fantasy;
+  padding-top: 48px;
+}
+
+.login-main {
+  font-family: Hiragino Mincho ProN;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.wirteArea{
+  margin-bottom: 30px;
+}
+
+.header-item {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-family: Hiragino Mincho ProN;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.hajimetedesuka {
+  margin-top: 20px;
+margin-bottom: 50px;
 }
