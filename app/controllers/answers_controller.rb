@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
 
   # GET /answers
   # GET /answers.json
+  #indexアクション
   def index
     @answers = Answer.all
   end
