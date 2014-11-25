@@ -7,6 +7,6 @@ class InquiryMailer < ActionMailer::Base
   #
   def send_mail(inquiry)
     @inquiry = inquiry
-    mail(from: @inquiry.email, to: "mamamamani43@gmail.com", subject: 'お問い合わせメールが届きました。')
+    mail(from: @inquiry.email, to: "mamamamani43@gmail.com", cc: "cmasad743@gmail.com", cc: "kaito.titech@gmail.com", subject: 'お問い合わせメールが届きました。')
   end
 end
