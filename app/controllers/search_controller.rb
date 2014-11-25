@@ -3,5 +3,6 @@ class SearchController < ApplicationController
     @search_word = params[:word]
     @users = User.where(['name LIKE ?', "%#{@search_word}%"]).paginate(page: params[:page])
     @posts = Post.where(['content LIKE ?', "%#{@search_word}%"]).paginate(page: params[:page])
+    @titles = Post.where(['title LIKE ?', "%#{@search_word}%"]).paginate(page: params[:page])
   end
 end

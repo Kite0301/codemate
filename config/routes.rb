@@ -1,4 +1,10 @@
 Codemate::Application.routes.draw do
+  get "inquiry/index"
+  get "inquiry/confirm"
+  get "inquiry/thanks"
+  get "inquiry_controller/index"
+  get "inquiry_controller/confirm"
+  get "inquiry_controller/thanks"
   get "search/index"
   resources :answers
 
@@ -28,4 +34,8 @@ Codemate::Application.routes.draw do
 
     end
   end
+
+  get 'inquiry' => 'inquiry#index'              # 入力画面
+  post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
+  post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 end

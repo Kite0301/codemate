@@ -4,6 +4,7 @@
 
 $grayMediumLight: #eaeaea;
 
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -25,6 +26,7 @@ html, body
 main
 {
   padding-bottom: 71px;
+  padding-top: 48px;
 }
 
 // *{
@@ -46,6 +48,7 @@ main
   display: inline;
   font-size: 20px;
 }
+
 #main-logo
 {
   float: left;
@@ -58,7 +61,7 @@ main
   line-height: 1;
   font-family: Georgia, Serif;
   font-weight: normal;
-  font-style: italic;
+  // font-style: italic;
 }
 
 
@@ -204,7 +207,7 @@ footer {
   float: left;
   margin-bottom: 0px;
   font-family: Georgia, Serif;
-  font-style: italic;
+  // font-style: italic;
   font-size: 1.7em;
 }
 
@@ -221,7 +224,7 @@ footer {
 
 .ex-top {
     // background-size: 100% 100%;
-    height: 700px;
+    height: 780px;
     // background-image: url(/assets/okinawa1.jpg);
     background-color: #08192D;
     color: white;
@@ -230,16 +233,52 @@ footer {
   }
 
   .ex-top h1 {
-    margin-top: 100px;
+    margin-top: 80px;
     font-size:50px;
     font-family: Hiragino Mincho ProN;
   }
 
-  .ex-subtitle {
+
+  .ex-top-logo {
+    margin-left: 360px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 0px 0;
+    height: 208px;
+    width: 220px;
+    border-radius: 50px;
+    color: white;
+    display: inline-block;
+    box-shadow: 0 12px 0 #852C37;
+  }
+
+  .ex-top-logo:active {
+    margin-top: 12px;
+    box-shadow: none;
+  }
+
+  .ex-top-logo i {
+    padding-top: 50px;
+  // padding-right: 7px;
+  font-size: 10.3em;
+
+}
+
+
+.codemate-logo-color {
+  background-color: #bf404f;
+}
+
+.logo-box{
+  height:240px;
+  margin-top: 110px;
+}
+
+.ex-subtitle {
   // text-align: center;
   font-family: Hiragino Mincho ProN;
   font-size: 1.75em;
-  margin-top: 120px;
+  margin-top: 90px;
 }
 
 .main-logo {
@@ -250,7 +289,7 @@ footer {
 }
 
 .codemate-logo {
-  
+
 }
 
 
@@ -587,8 +626,8 @@ div.top-back {
   list-style: none;
 }
 
-.subtitle li {
-  font-size: 25px;
+.subtitle {
+  font-size: 1.7em;
   margin-bottom: 30px;
 }
 //   div .container {
@@ -598,16 +637,26 @@ div.top-back {
 div .midashi-btn {
     // border: 1px solid red;
     color: black;
-    border-radius: 0;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    margin-left: 30px;
-    background-image: none;
+    width: 164px;
+    border-radius: 5px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 380px;
+    display: inline-block;
+    padding: 12px 16px;
+    font-size: 24px;
+    font-family: Georgia, Serif;
+    line-height: 20px;
+    border: 0px solid black;
+    background-color:rgba(191,64,79,0.6); 
   }
 
   div .midashi-btn:hover {
-    color: #bf404f;
-    border-color: #bf404f;
+    color: black;
+    border-color: black;
+    text-decoration: none;
+    background-color:rgba(191,64,79,0.75); 
+
   }
 
   .toplist{
@@ -616,8 +665,8 @@ div .midashi-btn {
 
   .topArea {
     background-size: 100% 100%;
-    height: 600px;
-    background-image: url(/assets/asahi.jpg);
+    height: 634px;
+    background-image: url(/assets/asahi2.jpg);
     background-color: #08192D;
     color: white;
     border: none;
@@ -626,13 +675,19 @@ div .midashi-btn {
   .topArea h1 {
     font-family: Georgia, Serif;
     font-weight: normal;
-    font-size: 55px;
+    font-size: 65px;
   // font-style: italic;
   
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 25px;
   color: #bf404f;
 
+}
+
+.subtitle {
+  font-family: Georgia, Serif;
+  color: black;
+  text-align: center;
 }
 
 .navbar {
@@ -641,10 +696,6 @@ div .midashi-btn {
   height: 48px;
 }
 
-.subtitle {
-  font-family: Georgia, Serif;
-  color: black;
-}
 
 .navbar-inverse .nav > li > a {
   color: white;
@@ -701,19 +752,6 @@ div .midashi-btn {
   padding-top: 48px;
 }
 
-.form-main {
-  font-family: Hiragino Mincho ProN;
-}
-
-.form-main form {
-  margin-bottom: 30px;
-}
-
-.form-main .actions {
-  margin-bottom: 35px;
-
-}
-
 label {
   display: block;
   margin-bottom: 5px;
@@ -755,4 +793,111 @@ label {
 
 .return-btn {
   font-size: 18px;
+}
+
+.email-login {
+  font-family: Hiragino Mincho ProN;
+  width: 27%;
+  margin-left: 15%;
+}
+
+.email-login form {
+  margin-bottom: 30px;
+}
+
+.email-login .actions {
+  margin-bottom: 35px;
+}
+
+.email-login legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.or-login {
+  position: absolute;
+  left: 42%;
+  width: 16%;
+  text-align: center;
+  line-height: 183px;
+}
+
+.sns-login {
+  position: absolute;
+  left: 58%;
+  width: 27%;
+}
+
+.sns-login legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.facebook-color {
+  background-color: #4c5a9c;
+}
+
+.twitter-color {
+  background-color: #55acee;
+}
+
+.googleplus-color {
+  background-color: #DD4B39;
+}
+
+.sns-login-btn {
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px 0;
+  width: 220px;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+}
+
+.login-btn{
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px 70px;
+  width: 220px;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  background-color: #FF9900;
+  border: none;
+}
+
+.login-btn:focus {
+  outline: none;
+}
+
+.search-btn {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  text-align: center;
+  padding: 5px;
+  // width: 220px;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  background-color: #777;
+  border: none;
+}
+
+.search-btn:focus {
+  outline: none;
 }
