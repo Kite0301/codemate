@@ -10,6 +10,23 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
+html, body
+{
+  height: 100%;
+}
+
+#contents
+{
+  min-height: 100%;
+  position: relative;
+  background-color: #FDF1F2;
+}
+
+main
+{
+  padding-bottom: 71px;
+}
+
 // *{
 //   margin: 0;
 //   padding: 0;
@@ -65,10 +82,6 @@ $grayMediumLight: #eaeaea;
 
 html {
   overflow-y: scroll;
-}
-
-body {
-  padding-top: 60px;
 }
 
 section {
@@ -143,24 +156,28 @@ header {
   color: 622954;
 }
 
-/* footer */
+// ここからフッターフッターフッターフッターフッター
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
-    color: $gray;
+    color: white;
     &:hover {
-      color: $grayDarker;
+      color: white;
+      text-decoration: underline;
     }
   }
   small {
     float: left;
   }
   ul {
-    float: right;
+    padding-bottom: 30px;
     list-style: none;
     li {
       float: left;
@@ -169,20 +186,231 @@ footer {
   }
 }
 
+.footer {
+  height: 30px;
+  margin-top: 0px;
+  border-top-width: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // padding-right: 50px;
+  border-top: 1px solid #eaeaea;
+  color: #999999;
+  background-color: #08192D;
+}
+
+.footer-logo {
+  margin-left: 150px;
+  width: 100px;
+  float: left;
+  margin-bottom: 0px;
+  font-family: Georgia, Serif;
+  font-style: italic;
+  font-size: 1.7em;
+}
+
+.footer-item{
+  float: right;
+  font-family: Hiragino Mincho ProN;
+  padding-right: 30px;
+}
+
+
+// ここまでフッターフッターフッターフッターフッター
+
+// 説明ページ"explanation"ここから
+
+.ex-top {
+    // background-size: 100% 100%;
+    height: 700px;
+    // background-image: url(/assets/okinawa1.jpg);
+    background-color: #08192D;
+    color: white;
+    border: none;
+    margin-top: 48px;
+  }
+
+  .ex-top h1 {
+    margin-top: 100px;
+    font-size:50px;
+    font-family: Hiragino Mincho ProN;
+  }
+
+  .ex-subtitle {
+  // text-align: center;
+  font-family: Hiragino Mincho ProN;
+  font-size: 1.75em;
+  margin-top: 120px;
+}
+
+.main-logo {
+  // position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.codemate-logo {
+  
+}
+
+
+// ここから説明が始まる
+// 検索
+.ex-search {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-search h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 質問
+.ex-post {
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-post h1 {
+  margin-top: 50px;
+  font-size:30px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// タグ
+.ex-tag {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-tag h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 返事
+.ex-reply{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-reply h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 編集
+.ex-edit {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-edit h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 回答
+.ex-answer{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-answer h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 評価
+.ex-good {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-good h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// レベル
+.ex-level{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-level h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// 称号
+.ex-status {
+  height: 470px;
+  background-color: #fef4f4;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-status h1 {
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+
+// スタート
+.ex-start{
+  height: 470px;
+  background-color: white;
+  color: #bf404f;
+  border: none;
+}
+
+.ex-start h1{
+  margin-top: 50px;
+  font-size:50px;
+  font-family: Hiragino Mincho ProN;
+}
+// 説明ページ"explanation"ここまで
 
 /* sidebar */
 
 .sidebar {
   float: right;
   margin-left: 0px;
-margin-top: 80px;
-margin-right: 0px;
-background-color: rgba(0, 0, 0, 0.11);
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 10px;
-padding-bottom: 10px;
+  margin-top: 80px;
+  margin-right: 0px;
+  background-color: rgba(0, 0, 0, 0.11);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
+
 
 aside {
   section {
@@ -351,7 +579,7 @@ div.top-back {
   color: black;
   width : 100%;
   // height: 1000px;
-  }
+}
 
 .subtitle {
   margin-left: 10px;
@@ -367,7 +595,7 @@ div.top-back {
 //     margin-top: 8%;
 //   }
 
-  div .midashi-btn {
+div .midashi-btn {
     // border: 1px solid red;
     color: black;
     border-radius: 0;
@@ -382,40 +610,36 @@ div.top-back {
     border-color: #bf404f;
   }
 
-.toplist{
-  float: left;
-}
+  .toplist{
+    float: left;
+  }
 
-.topArea {
-  background-size: 100% 100%;
-  height: 600px;
-  background-image: url(/assets/asahi.jpg);
-  background-color: #08192D;
-  color: white;
-  border: none;
-}
+  .topArea {
+    background-size: 100% 100%;
+    height: 600px;
+    background-image: url(/assets/asahi.jpg);
+    background-color: #08192D;
+    color: white;
+    border: none;
+  }
 
-.topArea h1 {
-  font-family: Georgia, Serif;
-  font-weight: normal;
-  font-size: 55px;
+  .topArea h1 {
+    font-family: Georgia, Serif;
+    font-weight: normal;
+    font-size: 55px;
   // font-style: italic;
   
-margin-top: 100px;
-margin-bottom: 100px;
-color: #bf404f;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #bf404f;
 
-}
-
-body {
-padding-top: 48px;
 }
 
 .navbar {
-    background-color: #bf404f;
-    border: none;
-    height: 48px;
-  }
+  background-color: #bf404f;
+  border: none;
+  height: 48px;
+}
 
 .subtitle {
   font-family: Georgia, Serif;
@@ -423,11 +647,11 @@ padding-top: 48px;
 }
 
 .navbar-inverse .nav > li > a {
-color: white;
-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   &:hover {
-  color:white;
-  text-decoration: underline;
+    color:white;
+    text-decoration: underline;
   }
 }
 
@@ -436,29 +660,19 @@ text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .about-timeline {
-margin-top: 80px;
-margin-bottom: 40px;
-margin-left: 0px;
-margin-right: 40px;
-background-color: rgba(223, 159, 167, 0.43);
-padding-left: 15px;
-border-top-width: 15px;
-padding-top: 15px;
-padding-right: 15px;
-padding-bottom: 15px;;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  margin-left: 0px;
+  margin-right: 40px;
+  background-color: rgba(223, 159, 167, 0.43);
+  padding-left: 15px;
+  border-top-width: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;;
 
 }
 
-.footer {
-  height: 30px;
-margin-top: 0px;
-border-top-width: 0px;
-padding-top: 25px;
-padding-right: 50px;
-border-top: 1px solid #eaeaea;
-color: #999999;
-background-color: none;
-}
 
 .naiyou-btn {
   height: 40px;
@@ -473,4 +687,72 @@ background-color: none;
 .naiyou-btn a {
   color: white;
 
+}
+
+.loginArea {
+  background-color: #FDF1F2;
+
+}
+
+.loginArea h1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: fantasy;
+  padding-top: 48px;
+}
+
+.form-main {
+  font-family: Hiragino Mincho ProN;
+}
+
+.form-main form {
+  margin-bottom: 30px;
+}
+
+.form-main .actions {
+  margin-bottom: 35px;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.wirteArea{
+  margin-bottom: 30px;
+}
+
+.header-item {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-family: Hiragino Mincho ProN;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  margin-bottom: 8px;
+
+}
+
+.hajimetedesuka {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.newuserArea {
+
+}
+
+.newuserArea h1 {
+  padding-top: 95px;
+  margin-bottom: 48px;
+} 
+
+.return-btn {
+  font-size: 18px;
 }

@@ -6,6 +6,7 @@ Codemate::Application.routes.draw do
   get "sessions/create"
   get "sessions/destroy"
   root  'about#index'
+  match '/explanation', to:'sessions#explanation', via: 'get'
   match '/about', to:'about#index', via:'get'
   match '/signin', to:'sessions#new', via:'get'
   match '/signout', to:'sessions#destroy', via:'get'
