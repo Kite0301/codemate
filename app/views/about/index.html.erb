@@ -24,28 +24,38 @@
 
 <% else %>
 
-<div class="jumbotron">
+
+<section class = "topArea">
   <div class="container">
     <h1>CodeMateへようこそ。</h1>
-    <p class = "subtitle">日本中のプログラマーのためのサイトです。コードを書いていて行き詰まってしまった時、CodeMateがあればもう１人で悩むことはありません。CodeMateにはプログラマーによる悩みとその答えが集約されています。どうぞ自分の問題の解決に役立つ質問を探してみてください。きっと見つかることでしょう。見つからない、そんな時には是非とも新たに質問を投稿して、CodeMateに新たな１ページを付け加えてやってください。</p>
+    <ul class = "subtitle">
+      <li>・プログラミング専用Ｑ＆Ａサイト</li>
+      <li>・日本語だからわかりやすい</li>
+      <li>・わかりやすいUI</li>
+    </ul> 
     <p><a class="btn btn-lg midashi-btn" role="button">もっと詳しく &raquo;</a></p>
+<!-- 
+    <div class = "naiyou-btn"><a href="">もっと詳しく</a></div>
   </div>
-</div>
+ -->
+</section>
 
+<section class = "mainArea">
 <div class="container main-content">
   <div class="row">
     <div class="col-md-9 content-area">
-      <h2>最新の質問</h2>
+      <!-- <h2>最新の質問</h2> -->
 
-      <div class="span8 toplist">
+      <div class="span8 toplist about-timeline">
             <% if @feed_posts.any? %>
-            <h3>Posts</h3>
+            <h3>質問一覧</h3>
             <ol class="microposts">
               <%= render @feed_posts %>
             </ol>
             <%= will_paginate @feed_posts %>
             <% end %>
           </div>
+
 
         <!-- 
         <a href="">XHTML+CSSレイアウトについて</a><br>
@@ -118,4 +128,6 @@
         </div><!--/.sidebar-->
       </div>
     </div><!--/.main-content-->
+
+    </section>
     <% end %>
