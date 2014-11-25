@@ -1,9 +1,11 @@
 <div class="post-show">
 	<p id="notice"><%= notice %></p>
 	<p>
+
 		<h1>質問</h1>
 		<div class="post-title">タイトル :</div>
-	  <%= link_to @post.title %>
+	  <%= link_to @post.title, post_path %>
+
 
 	</p>
 
@@ -17,7 +19,7 @@
 	  <%= @post.user.name %>
 	</p>
 </div>
-
+<% if signed_in?  %>
 <%= render @post.answers  %>
 
 <%= render 'answers/form' %>
@@ -25,3 +27,4 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+<% end %>
