@@ -1,5 +1,5 @@
-<div class="row">
-  <aside class="span4">
+<div class="row main-container">
+  <aside class="span4 profile-box">
     <section>
       <h1>
         <%= profile_image_for @user %>
@@ -9,25 +9,29 @@
 
       </h1>
       <p><%= @user.profile %></p>
+      <%= link_to '編集', edit_user_path(@user) %>
 
     </section>
   </aside>
   <div class="span8">
     <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
+    <div class="myposts">
+      <h3>自分の質問 (<%= @user.posts.count %>)</h3>
       <ol class="microposts">
         <%= render @posts %>
-
       </ol>
-       <h3>お気に入りPOSTS</h3>
+    </div>
+       <h3>お気に入り</h3>
        <ol class="microposts">
          <%= render @user.favorite_posts %>
        </ol>  
        
       <%= will_paginate @posts %>
     <% end %>
-  </div>
 
+  </div>
+  <div class ="return-btn">
+    <%= link_to '戻る', users_path %>
+  </div>
+     
 </div>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

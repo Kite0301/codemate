@@ -1,6 +1,7 @@
 <% if(post.title) %>
+<div class ="post-form">
 <li>
-  
+  <%= link_to profile_image_for(post.user) %>
  <span class="title">タイトル: <%= link_to post.title, post %></span><br> 
   
   <% if current_user %>
@@ -24,5 +25,6 @@
   <% end %>
   
 </li>
+</div>
 
 <% end %>

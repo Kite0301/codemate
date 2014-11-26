@@ -2,7 +2,7 @@
 <%= form_for(@post) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 <div class="post-title">
-	<%= f.text_area :title, placeholder: "タイトル" %>
+	<%= f.text_field :title, placeholder: "タイトル" %>
 </div>
 <div class="field">
 	<%= f.text_area :content, placeholder: "質問内容" %>
