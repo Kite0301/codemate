@@ -17,7 +17,13 @@
       <h3>Posts (<%= @user.posts.count %>)</h3>
       <ol class="microposts">
         <%= render @posts %>
+
       </ol>
+       <h3>お気に入りPOSTS</h3>
+       <ol class="microposts">
+         <%= render @user.favorite_posts %>
+       </ol>  
+       
       <%= will_paginate @posts %>
     <% end %>
   </div>
