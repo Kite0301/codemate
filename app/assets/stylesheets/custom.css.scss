@@ -167,7 +167,7 @@ footer {
   width: 100%;
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
+  // border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
     color: white;
@@ -190,7 +190,7 @@ footer {
 }
 
 .footer {
-  height: 30px;
+  height: 40px;
   margin-top: 0px;
   border-top-width: 0px;
   padding-top: 20px;
@@ -725,7 +725,8 @@ div .midashi-btn {
   border-top-width: 15px;
   padding-top: 15px;
   padding-right: 15px;
-  padding-bottom: 15px;;
+  padding-bottom: 15px;
+  width: 758px;
 
 }
 
@@ -916,7 +917,7 @@ label {
 }
 
 .about-side {
-  width: 300px;
+  width: 190px;
   height: 600px;
   float: left;
   margin-left: 30px;

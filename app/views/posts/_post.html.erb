@@ -1,25 +1,28 @@
 <% if(post.title) %>
 <li>
   
- <span class="title">タイトル: <%= link_to post.title, post %></span>
+ <span class="title">タイトル: <%= link_to post.title, post %></span><br> 
   
   <% if current_user %>
     <span id="post_<%= post.id %>">
       <%= render 'favorites/favorite_btn', post: post %>
     </span>
   <% end %>
+
+  <div id="favorite_<%= post.id %>" class="favorite-count">
+    <%= pluralize(post.favorites.count, "favorite") %>
+  </div>
+  
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
   </span>
   
   <% if current_user?(post.user) %>
-    <%= link_to "投稿を削除", post, method: :delete,
+    <br><%= link_to "投稿を削除", post, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: post.content %>
   <% end %>
-  <div id="favorite_<%= post.id %>" class="favorite-count">
-    <%= pluralize(post.favorites.count, "favorite") %>
-  </div>
+  
 </li>
 
 <% end %>
