@@ -1,17 +1,10 @@
 
 <% if signed_in?  %>
-<div class="row">
- <!--  <aside class="span4">
 
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
+<div class="container">
 
-    <section>
-      <%= render 'posts/form' %>
-    </section>
-  </aside> -->
-  <div class="span8">
+  <div class="span8 about-timeline">
+
     <% if @feed_posts.any? %>
     <h3>Posts</h3>
     <ol class="microposts">
@@ -19,6 +12,14 @@
     </ol>
     <%= will_paginate @feed_posts %>
     <% end %>
+  </div>
+
+  <div class="about-side">
+    <a href="/question">
+      <div class ="question-btn">
+      質問する
+      </div>
+    </a>
   </div>
 </div>
 
