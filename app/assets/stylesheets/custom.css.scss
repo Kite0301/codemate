@@ -53,7 +53,7 @@ main
 {
   float: left;
   margin-right: 10px;
-  font-size: 2.0em;
+  font-size: 35px;
   color: white;
   /* text-transform: uppercase; */
   letter-spacing: -1px;
@@ -173,7 +173,7 @@ footer {
     color: white;
     &:hover {
       color: white;
-      text-decoration: underline;
+      // text-decoration: underline;
     }
   }
   small {
@@ -198,7 +198,7 @@ footer {
   // padding-right: 50px;
   border-top: 1px solid #eaeaea;
   color: #999999;
-  background-color: #08192D;
+  background-color: #0a2147;
 }
 
 .footer-logo {
@@ -220,20 +220,38 @@ footer {
 
 // ここまでフッターフッターフッターフッターフッター
 
+/* sidebar */
+
+.sidebar {
+  float: right;
+  margin-left: 0px;
+  margin-top: 80px;
+  margin-right: 0px;
+  background-color: #bf404f;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 2000px;
+  width: 141px;
+}
+
+// サイドバーここ
+
 // 説明ページ"explanation"ここから
 
 .ex-top {
     // background-size: 100% 100%;
     height: 780px;
     // background-image: url(/assets/okinawa1.jpg);
-    background-color: #08192D;
+    background-color: #0a2147;
     color: white;
     border: none;
     // margin-top: 48px;
   }
 
   .ex-top h1 {
-    margin-top: 80px;
+    margin-top: 150px;
     font-size:50px;
     font-family: Hiragino Mincho ProN;
   }
@@ -241,7 +259,7 @@ footer {
 
   .ex-top-logo {
     margin-left: 440px;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
     text-align: center;
     padding: 0px 0;
     height: 208px;
@@ -278,7 +296,7 @@ footer {
   // text-align: center;
   font-family: Hiragino Mincho ProN;
   font-size: 1.75em;
-  margin-top: 90px;
+  margin-top: 60px;
   line-height: 43px;
 }
 
@@ -435,20 +453,6 @@ footer {
   font-family: Hiragino Mincho ProN;
 }
 // 説明ページ"explanation"ここまで
-
-/* sidebar */
-
-.sidebar {
-  float: right;
-  margin-left: 0px;
-  margin-top: 80px;
-  margin-right: 0px;
-  background-color: rgba(0, 0, 0, 0.11);
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 
 
 
@@ -642,7 +646,7 @@ div .midashi-btn {
     border-radius: 5px;
     margin-top: 100px;
     margin-bottom: 50px;
-    margin-left: 380px;
+    margin-left: 460px;
     display: inline-block;
     padding: 12px 16px;
     font-size: 24px;
@@ -668,7 +672,7 @@ div .midashi-btn {
     background-size: 100% 100%;
     height: 634px;
     background-image: url(/assets/asahi2.jpg);
-    background-color: #08192D;
+    background-color: #0a2147;
     color: white;
     border: none;
   }
@@ -694,7 +698,7 @@ div .midashi-btn {
 .navbar {
   background-color: #bf404f;
   border: none;
-  height: 48px;
+  height: 80px;
 }
 
 
@@ -767,6 +771,7 @@ label {
   padding-top: 4px;
   padding-bottom: 4px;
   font-family: Hiragino Mincho ProN;
+  font-size: 18px;
 }
 
 .field {
@@ -878,7 +883,7 @@ label {
   border-radius: 3px;
   color: white;
   display: inline-block;
-  background-color: #FF9900;
+  background-color: #1531a8;
   border: none;
 }
 
@@ -926,5 +931,34 @@ label {
 .question-btn {
   background-color: #DA3B5B;
   padding: 5px 5px 5px 5px ;
+  color: white;
+  &:hover {
+    text-decoration: none;
+  }
+}
 
+.top-side {
+  float: right;
+  margin-left: 0px;
+  margin-top: 80px;
+  margin-right: 0px;
+  background-color: rgba(100, 0, 0, 0.11);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 100%;
+  width: 200px;
+}
+
+.header-contents {
+  padding-top: 13px;
+}
+
+.search-box {
+  height: 400px;
+}
+
+.search-item {
+  width:300px;
 }
