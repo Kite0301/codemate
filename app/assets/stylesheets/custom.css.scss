@@ -20,7 +20,7 @@ html, body
 {
   min-height: 100%;
   position: relative;
-  background-color: #fcf2f3;
+  background-color: white;
 }
 
 main
@@ -716,7 +716,7 @@ div .midashi-btn {
 }
 
 .mainArea {
-  background-color: #FDF1F2;
+  background-color: white;
 }
 
 .about-timeline {
@@ -755,7 +755,7 @@ div .midashi-btn {
 }
 
 .loginArea {
-  background-color: #FDF1F2;
+  background-color: white;
 
 }
 
@@ -1011,12 +1011,15 @@ margin-bottom: 50px;
 }
 
 .post-form {
-  background-color: #EE94B1;
-  border-radius: 16px;
+  background-color: #C8CFE5;
+  border-radius: 1px;
   margin-bottom: 40px;
   margin-right: 16px;
   padding-left: 13px;
-  box-shadow: 0 10px 0 #E34D7E;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 13px;
+  // box-shadow: 0 10px 0 #E34D7E;
 }
 
 .microposts li {

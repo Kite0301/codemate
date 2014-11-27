@@ -9,7 +9,6 @@ Codemate::Application.routes.draw do
   get "sessions/destroy"
   root  'about#index'
   match '/explanation', to:'sessions#explanation', via: 'get'
-  
   match '/about', to:'about#index', via:'get'
   match '/signin', to:'sessions#new', via:'get'
   match '/signout', to:'sessions#destroy', via:'get'
@@ -21,7 +20,7 @@ Codemate::Application.routes.draw do
   resources :favorites, only: [:create, :destroy]
   resources :users do
     member do
-      get  :favorite
+      get  :favorite, :edit_password
     end
   end
 

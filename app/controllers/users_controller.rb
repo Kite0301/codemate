@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in_user, only: [:edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_password]
+  before_action :signed_in_user, only: [:edit, :update, :edit_password]
+  before_action :correct_user,   only: [:edit, :update, :edit_password]
   # GET /users
   # GET /users.json
   def index
@@ -21,6 +21,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def edit_password
   end
 
   # POST /users
@@ -46,7 +49,11 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
-      render 'edit'
+      if (params[:user][:password])
+        render 'edit_password'
+      else
+        render 'edit'
+      end
     end
   end
 
@@ -71,7 +78,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :profile,
    :password_confirmation)
-  end 
+  end
 
   # Before actions
 

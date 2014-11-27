@@ -15,16 +15,20 @@
             <% end %>
           </li>
           <% if signed_in? %>
-          <!-- <li id="fat-menu" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu"> -->
               <li class = "header-item"><%= link_to "マイページ", current_user %></li>
-              <li class = "header-item"><%= link_to "設定", edit_user_path(current_user) %></li>
+                 <li id="fat-menu" class="dropdown header-item">
+            <a href="#" class="" data-toggle="dropdown">
+              設定 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li class = "header-item"><%= link_to "プロフィール変更", edit_user_path(current_user) %></li>
+              <li class = "header-item"><%= link_to "パスワード変更", edit_password_user_path(current_user) %></li>
+              <!-- <li class = "header-item"><%= link_to "アカウント削除", edit_user_path(current_user) %></li> -->
+                 </li>
+                  </ul>
               <li class = "header-item"><%= link_to "ログアウト", signout_path %></li>
-            </ul>
-          </li>
+           
+       
           <% else %>
           <li class = "header-item"><%= link_to "新規登録", new_user_path %></li>
           <li class = "header-item"><%= link_to "ログイン", signin_path %></li>
