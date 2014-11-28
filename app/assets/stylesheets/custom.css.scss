@@ -202,7 +202,7 @@ footer {
 }
 
 .footer-logo {
-  margin-left: 150px;
+  // margin-left: 150px;
   width: 100px;
   float: left;
   margin-bottom: 0px;
@@ -307,154 +307,27 @@ footer {
   text-align: center;
 }
 
-.codemate-logo {
-
-}
-
-
 // ここから説明が始まる
 // 検索
-.ex-search {
-  height: 470px;
-  background-color: #fef4f4;
-  color: #bf404f;
-  border: none;
-}
 
-.ex-search h1{
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// 質問
-.ex-post {
-  height: 470px;
-  background-color: white;
-  color: #bf404f;
-  border: none;
-}
-
-.ex-post h1 {
+.ex-box h1 {
   margin-top: 50px;
   font-size:30px;
   font-family: Hiragino Mincho ProN;
 }
 
-// タグ
-.ex-tag {
-  height: 470px;
-  background-color: #fef4f4;
-  color: #bf404f;
-  border: none;
-}
-
-.ex-tag h1 {
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// 返事
-.ex-reply{
+.ex-box-odd{
   height: 470px;
   background-color: white;
   color: #bf404f;
   border: none;
 }
 
-.ex-reply h1{
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// 編集
-.ex-edit {
+.ex-box-even{
   height: 470px;
   background-color: #fef4f4;
   color: #bf404f;
   border: none;
-}
-
-.ex-edit h1 {
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// 回答
-.ex-answer{
-  height: 470px;
-  background-color: white;
-  color: #bf404f;
-  border: none;
-}
-
-.form-main{
-  margin-top: 20px;
-}
-
-.ex-answer h1{
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// 評価
-.ex-good {
-  height: 470px;
-  background-color: #fef4f4;
-  color: #bf404f;
-  border: none;
-}
-
-.ex-good h1 {
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// レベル
-.ex-level{
-  height: 470px;
-  background-color: white;
-  color: #bf404f;
-  border: none;
-}
-
-.ex-level h1{
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// 称号
-.ex-status {
-  height: 470px;
-  background-color: #fef4f4;
-  color: #bf404f;
-  border: none;
-}
-
-.ex-status h1 {
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
-}
-
-// スタート
-.ex-start{
-  height: 470px;
-  background-color: white;
-  color: #bf404f;
-  border: none;
-}
-
-.ex-start h1{
-  margin-top: 50px;
-  font-size:50px;
-  font-family: Hiragino Mincho ProN;
 }
 // 説明ページ"explanation"ここまで
 
@@ -610,13 +483,13 @@ aside {
   color: gray;
   cursor: pointer;
 }
-.answer-button
-{
-  color: white;
-  background-color: rgb(107, 215, 211);
-  border-radius: 8px;
-  border: none;
-}
+// .answer-button
+// {
+//   color: white;
+//   background-color: rgb(107, 215, 211);
+//   border-radius: 8px;
+//   border: none;
+// }
 .reply{
   display: none;
 }
@@ -1068,13 +941,13 @@ label {
   width: 88px;
   padding: 6px 5px;
   background-color: none;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #8C8C8C;
   &:hover{
-  border-top: 1px solid #e8e8e8;
-  border-right: 1px solid #e8e8e8;
+  border-top: 1px solid #8C8C8C;
+  border-right: 1px solid #8C8C8C;
   border-bottom: 0px;
   // border-bottom: 1px solid white;
-  border-left: 1px solid #e8e8e8;
+  border-left: 1px solid #8C8C8C;
   padding-top: 5px;
   padding-right: 4px;
   padding-left: 4px;
@@ -1083,31 +956,32 @@ label {
 
 .timeline-btn h4{
   margin: 0px;
+  text-align: center;
   // float: left;
 }
 
-.timeline-btn2 {
+// インチキ
+.timeline-btn-new {
   float: left;
-  width: 105px;
+  width: 88px;
   padding: 6px 5px;
   background-color: none;
-    border-bottom: 1px solid #e8e8e8;
-  &:hover{
-  border-top: 1px solid #e8e8e8;
-  border-right: 1px solid #e8e8e8;
+  border-top: 1px solid #8C8C8C;
+  border-right: 1px solid #8C8C8C;
   border-bottom: 0px;
   // border-bottom: 1px solid white;
-  border-left: 1px solid #e8e8e8;
+  border-left: 1px solid #8C8C8C;
   padding-top: 5px;
   padding-right: 4px;
   padding-left: 4px;
-  }
 }
 
-.timeline-btn2 h4{
+.timeline-btn-new h4{
   margin: 0px;
+  text-align: center;
   // float: left;
 }
+// インチキおわり
 
 .timeline-navi {
   margin-left: 13px;
@@ -1120,8 +994,8 @@ label {
   float: right;
   height:30px;
   // background-color:#e8e8e8; 
-  width: 400px;
-  border-bottom: 1px solid #e8e8e8;
+  width: 377px;
+  border-bottom: 1px solid #8C8C8C;
 }
 
 .timeline-navi-left{
@@ -1129,5 +1003,27 @@ label {
   height:30px;
   // background-color:#e8e8e8; 
   width: 47px;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #8C8C8C;
+}
+
+.timeline-btn-space{
+  float: left;
+  height:30px;
+  // background-color:#e8e8e8; 
+  width: 20px;
+  border-bottom: 1px solid #8C8C8C;
+}
+
+.post-show {
+  margin-top: 80px;
+}
+
+.answerArea {
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.margin80 {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
