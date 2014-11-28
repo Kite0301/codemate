@@ -1,9 +1,51 @@
 <div class ="main-container">
 <h1>プロフィール編集</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3 form-main">
 
-<%= link_to 'Show', @user %> |
-<%= link_to("Delete", @user , method: :delete, data: { confirm: "You sure?" }) %>
+    <%= form_for @user, html: { multipart: true} do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <div class="field">
+        <%= f.label :名前 %>
+        <%= f.text_field :name %>
+      </div>
+
+     
+      <div class="field">
+        <%= f.label :プロフィール画像 %>
+        <%= f.file_field :image %>
+      </div>
+      <div class="field">
+        <%= f.label :メールアドレス %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :プロフィール（任意） %>
+        <%= f.text_area :profile %>
+      </div>
+<!--       <div class="field">
+        <%= f.label :パスワード %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, "パスワード（確認）" %>
+        <%= f.password_field :password_confirmation %>
+      </div> -->
+      <div class="actions">
+        <%= f.submit "登録", class: "original-btn" %>
+      </div>
+
+      <div class="return-btn">
+      <%= link_to '戻る', users_path %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
+
+<%= link_to 'Show', @user %>
 
 </div>

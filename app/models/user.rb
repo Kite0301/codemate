@@ -5,9 +5,14 @@ class User < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 	has_secure_password
-	validates :password, length: { minimum: 6 }
-	 has_many :favorites
-  	has_many :favorite_posts, through: :favorites, source: :post
+	
+	validates :password,
+	:length => { :minimum => 8, :if => :validate_password? },
+	:confirmation => { :if => :validate_password? },
+	:presence => true
+
+	has_many :favorites
+	has_many :favorite_posts, through: :favorites, source: :post
 	
 	def set_image(file)
 		if !file.nil?
@@ -25,18 +30,22 @@ class User < ActiveRecord::Base
 	end
 
 	def favorite?(post)
-    favorites.find_by(post_id: post.id)
-  end
+		favorites.find_by(post_id: post.id)
+	end
 
-  def favorite!(post)
-    favorites.create!(post_id: post.id)
-  end
+	def favorite!(post)
+		favorites.create!(post_id: post.id)
+	end
 
-  def unfavorite!(post)
-    favorites.find_by(post_id: post.id).destroy
-  end
+	def unfavorite!(post)
+		favorites.find_by(post_id: post.id).destroy
+	end
 
 	private
+
+	def validate_password?
+		password.present? || password_confirmation.present?
+	end
 
 	def create_remember_token
 		self.remember_token = User.encrypt(User.new_remember_token)
