@@ -816,11 +816,23 @@ label {
 }
 
 .question-btn {
-  background-color: #DA3B5B;
-  padding: 5px 5px 5px 5px ;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px 70px;
+  width: 56px;
+  border-radius: 3px;
   color: white;
+  display: inline-block;
+  background-color: #264ae4;
+  border: none;
   &:hover {
     text-decoration: none;
+    background-color: #4967e8;
+    color: white;
+  }
+  &:active{
+    background-color: #1838bf;
   }
 }
 

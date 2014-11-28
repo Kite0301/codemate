@@ -1,28 +1,7 @@
 
 <% if signed_in?  %>
 
-<div class="container">
-
-  <div class="span8 about-timeline">
-
-    <% if @feed_posts.any? %>
-    <h3>Posts</h3>
-    <ol class="microposts">
-      <%= render @feed_posts %>
-    </ol>
-    <%= will_paginate @feed_posts %>
-    <% end %>
-  </div>
-
-  <div class="about-side">
-    <a href="/question">
-      <%= link_to '質問する', new_post_path %> 
-    </a>
-  </div>
-</div>
-
 <% else %>
-
 
 <section class = "topArea">
   <div class="container">
@@ -35,40 +14,49 @@
 
 </section>
 
+<% end %>
+
 <section class = "mainArea">
-<div class="container main-content">
-  <div class="row">
-    <div class="col-md-9 content-area">
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-md-9 content-area">
 
-      <div class="span8 toplist about-timeline">
-            <% if @feed_posts.any? %>
-            <div class="timeline-navi">
-              <div class ="timeline-navi-left"></div>
-              <div class="timeline-btn-new">
-               <h4>最新</h4>
-              </div>
-              <div class ="timeline-btn-space"></div>
-              <div class="timeline-btn">
-               <h4>人気</h4>
-              </div>
-                <div class="timeline-btn-space"></div>
-              <div class="timeline-btn">
-               <h4>未回答</h4>
-              </div>
-              <div class ="timeline-navi-right"></div>
-            </div>
-            <ol class="microposts">
-              <%= render @feed_posts %>
-            </ol>
-            <%= will_paginate @feed_posts %>
-            <% end %>
-          </div>
+        <div class="span8 toplist about-timeline">
+          <% if @feed_posts.any? %>
+          <div class="timeline-navi">
+            <div class ="timeline-navi-left"></div>
+            <div class="timeline-btn-new">
+             <h4>最新</h4>
+           </div>
+           <div class ="timeline-btn-space"></div>
+           <div class="timeline-btn">
+             <h4>人気</h4>
+           </div>
+           <div class="timeline-btn-space"></div>
+           <div class="timeline-btn">
+             <h4>未回答</h4>
+           </div>
+           <div class ="timeline-navi-right"></div>
+         </div>
+         <ol class="microposts">
+          <%= render @feed_posts %>
+        </ol>
+        <%= will_paginate @feed_posts %>
+        <% end %>
+      </div>
 
-          <div class ="original-side">
-            <div class ="posts-number">
-              <h4>現在の質問数</h4>
-              <p>31,415,926</p>
-            </div>
+      <div class ="original-side">
+
+        <% if signed_in?  %>
+
+          <a class="question-btn" role="button" href="/posts/new">質問する</a>
+
+        <% end %>
+
+        <div class ="posts-number">
+          <h4>現在の質問数</h4>
+          <p>31,415,926</p>
+        </div>
         <div class="col-md-3 top-side">
           <aside>
             <h4>人気のタグ</h4>
@@ -101,5 +89,5 @@
       </div>
     </div><!--/.main-content-->
 
-    </section>
-    <% end %>
+  </section>
+
