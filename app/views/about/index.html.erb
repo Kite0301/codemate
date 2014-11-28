@@ -39,11 +39,22 @@
 <div class="container main-content">
   <div class="row">
     <div class="col-md-9 content-area">
-      <!-- <h2>最新の質問</h2> -->
 
       <div class="span8 toplist about-timeline">
             <% if @feed_posts.any? %>
-            <h3>最新の質問</h3>
+            <div class="timeline-navi">
+              <div class ="timeline-navi-left"></div>
+              <div class="timeline-btn">
+               <h4>最新の質問</h4>
+              </div>
+              <div class="timeline-btn">
+               <h4>人気の質問</h4>
+              </div>
+              <div class="timeline-btn2">
+               <h4>未回答の質問</h4>
+              </div>
+              <div class ="timeline-navi-right"></div>
+            </div>
             <ol class="microposts">
               <%= render @feed_posts %>
             </ol>
@@ -51,20 +62,30 @@
             <% end %>
           </div>
 
+          <div class ="original-side">
+            <div class ="posts-number">
+              <h4>現在の質問数</h4>
+              <p>31,415,926</p>
+            </div>
         <div class="col-md-3 top-side">
           <aside>
-            <h4>カテゴリへのリンク</h4>
-            <ul class="list-unstyled">
-              <li><a href="">Link</a></li>
-              <li><a href="">Link</a></li>
-              <li><a href="">Link</a></li>
-              <li><a href="">Link</a></li>
-              <li><a href="">Link</a></li>
-            </ul>
+            <h4>人気のタグ</h4>
+            <ol class="tag-lists">
+              <li><a href="#" class="original-tag">java</a> (754405)</li>
+              <li><a href="#" class="original-tag">javascript</a>(740619)</li>
+              <li><a href="#" class="original-tag">c#</a>(726141)</li>
+              <li><a href="#" class="original-tag">php</a>(671460)</li>
+              <li><a href="#" class="original-tag">android</a>(597169)</li>
+              <li><a href="#" class="original-tag">jquery</a>(555457)</li>
+              <li><a href="#" class="original-tag">python</a>(364318)</li>
+              <li><a href="#" class="original-tag">html</a>(360714)</li>
+              <li><a href="#" class="original-tag">c++</a>(331823)</li>
+              <li><a href="#" class="original-tag">ios</a>(289765)</li>
+            </ol>
           </aside>
-
+<!-- 
           <aside>
-            <h4>新着記事</h4>
+            <h4></h4>
             <ul class="list-unstyled">
               <li><a href="">記事のタイトルタイトル</a></li>
               <li><a href="">記事のタイトルタイトル</a></li>
@@ -72,7 +93,7 @@
               <li><a href="">記事のタイトルタイトル</a></li>
               <li><a href="">記事のタイトルタイトル</a></li>
             </ul>
-          </aside>
+          </aside> -->
 
         </div><!--/.sidebar-->
       </div>
