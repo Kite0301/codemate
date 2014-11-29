@@ -887,8 +887,16 @@ label {
   border-radius: 3px;
   color: white;
   display: inline-block;
-  background-color: #1531a8;
+  background-color: #264ae4;
   border: none;
+  &:hover {
+    text-decoration: none;
+    background-color: #4967e8;
+    color: white;
+  }
+  &:active{
+    background-color: #1838bf;
+  }
 }
 
 .original-btn:focus {
@@ -929,6 +937,7 @@ label {
 }
 
 .original-tag {
+  display: inline;
   background-color: #e6b6bb;
   margin-top: 3px;
   margin-right: 8px;
