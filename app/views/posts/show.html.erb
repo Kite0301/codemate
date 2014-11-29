@@ -18,6 +18,9 @@
 	  <strong>ユーザー:</strong>
 	  <%= @post.user.name %>
 	</p>
+	<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+	  <%= tag.name %>
+	<% end %>
 </div>
 <div class="container answerArea">
 <% if signed_in?  %>

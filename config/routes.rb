@@ -14,7 +14,7 @@ Codemate::Application.routes.draw do
   match '/signout', to:'sessions#destroy', via:'get'
   match '/search', to: 'search#index', via: 'get' 
   
-  resources :users
+  # resources :users
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
@@ -31,5 +31,10 @@ Codemate::Application.routes.draw do
     end
   end
 
+resources :users do
+  collection do
+    # get 'tag/:tag_name'
+  end
+end
   
 end

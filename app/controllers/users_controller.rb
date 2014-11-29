@@ -72,7 +72,6 @@ class UsersController < ApplicationController
     render template: 'about/index'
   end
 
-
   private
 
   def user_params

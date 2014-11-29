@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @answer = Answer.new
+    @tags = @post.tags
   end
 
   # GET /posts/new
@@ -83,7 +84,7 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
 
-      params.require(:post).permit(:content,:title)
+      params.require(:post).permit(:content,:title,:tag_list)
     end
 
     def correct_user
