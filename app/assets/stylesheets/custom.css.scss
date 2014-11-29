@@ -47,6 +47,7 @@ main
 {
   display: inline;
   font-size: 20px;
+  // margin-top: 20px;
 }
 
 #main-logo
@@ -1038,4 +1039,12 @@ label {
 .margin80 {
   margin-top: 80px;
   margin-bottom: 80px;
+}
+
+.post-form-title {
+  margin-top: 25px;
+}
+
+.post-form-main {
+  margin-top: 8px;
 }
