@@ -1,12 +1,12 @@
 <%= link_to profile_image_for(current_user), current_user %>
-<h1>
+<h4>
   <%= current_user.name %>
-</h1>
+</h4>
 <span>
-  <%= link_to "view my profile", current_user %>
+  <%= link_to "マイページ", current_user %>
 </span>
 <span>
-  <%= pluralize(current_user.posts.count, "post") %>
+  　質問数：<%= pluralize(current_user.posts.count, "") %>
    |
-  <%= pluralize(current_user.answers.count, "answer") %>
+  回答数：<%= pluralize(current_user.answers.count, "") %>
 </span>
