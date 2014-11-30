@@ -1,4 +1,4 @@
-# encoding: UTF-8
+f# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(version: 20141129014620) do
     t.datetime "updated_at"
   end
 
-  add_index "favorites", ["post_id"], name: "index_favorites_on_post_id"
-  add_index "favorites", ["user_id", "post_id"], name: "index_favorites_on_user_id_and_post_id", unique: true
-  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
+  create_table "forgets", force: true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "inquiries", force: true do |t|
     t.string   "email"
@@ -46,6 +48,21 @@ ActiveRecord::Schema.define(version: 20141129014620) do
     t.datetime "updated_at"
     t.string   "title"
     t.integer  "answer_to"
+  end
+
+  create_table "posttags", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", force: true do |t|
@@ -77,6 +94,8 @@ ActiveRecord::Schema.define(version: 20141129014620) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "profile"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
