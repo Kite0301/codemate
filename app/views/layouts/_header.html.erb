@@ -27,12 +27,13 @@
                  </li>
                   </ul>
               <li class = "header-item"><%= link_to "ログアウト", signout_path %></li>
-           
+              <li class = "header-item"><%= link_to "使い方", explanation_path %></li>
+          
        
           <% else %>
           <li class = "header-item"><%= link_to "新規登録", new_user_path %></li>
           <li class = "header-item"><%= link_to "ログイン", signin_path %></li>
-          <li class = "header-item"><%= link_to "使い方", explanation_path %></li>
+
           <% end %>
         </ul>
       </nav>
