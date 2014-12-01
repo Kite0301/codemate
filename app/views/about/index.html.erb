@@ -61,16 +61,10 @@
           <aside>
             <h4>人気のタグ</h4>
             <ol class="tag-lists">
-              <li><a href="#" class="original-tag">java</a> (754405)</li>
-              <li><a href="#" class="original-tag">javascript</a>(740619)</li>
-              <li><a href="#" class="original-tag">c#</a>(726141)</li>
-              <li><a href="#" class="original-tag">php</a>(671460)</li>
-              <li><a href="#" class="original-tag">android</a>(597169)</li>
-              <li><a href="#" class="original-tag">jquery</a>(555457)</li>
-              <li><a href="#" class="original-tag">python</a>(364318)</li>
-              <li><a href="#" class="original-tag">html</a>(360714)</li>
-              <li><a href="#" class="original-tag">c++</a>(331823)</li>
-              <li><a href="#" class="original-tag">ios</a>(289765)</li>
+              <% @tags.each do |tag| %>
+                <li><%= link_to tag.name, tag_path(tag.id)  , class: "original-tag" %> (<%= tag.taggings_count %>)</li>  
+              <% end %>
+              
             </ol>
           </aside>
 

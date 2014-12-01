@@ -1,4 +1,5 @@
 Codemate::Application.routes.draw do
+  get "tags/search"
   get "tag_search/index"
   resources :inquiries
 
@@ -14,10 +15,10 @@ Codemate::Application.routes.draw do
   match '/signin', to:'sessions#new', via:'get'
   match '/signout', to:'sessions#destroy', via:'get'
   match '/search', to: 'search#index', via: 'get' 
-  match '/tag_search', to: 'tag_search#index', via: 'get'
+  
   
   # resources :users
-  resources :tag_searchs
+  resources :tags
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
