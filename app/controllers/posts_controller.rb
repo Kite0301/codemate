@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   def show
     @answer = Answer.new
     @tags = @post.tags
+    
   end
 
   # GET /posts/new
