@@ -1,5 +1,5 @@
 <li>
-  <%= profile_image_for(user) %>
+  <%= link_to profile_image_for(user), user_path(user) %>
   <%= link_to user.name, user %>
   
 </li>
