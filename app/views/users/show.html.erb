@@ -16,7 +16,17 @@
   <div class="span8">
     <% if @user.posts.any? %>
     <div class="myposts">
-      <h3>自分の質問 (<%= @user.posts.count %>)</h3>
+     <div class="timeline-navi">
+            <div class ="timeline-navi-left"></div>
+            <div class="timeline-btn-new">
+             <h4>質問</h4>
+           </div>
+           <div class ="timeline-btn-space"></div>
+           <div class="timeline-btn">
+             <h4>お気に入り</h4>
+           </div>
+           <div class ="timeline-navi-right-mypage"></div>
+         </div>
       <ol class="microposts">
         <%= render @posts %>
       </ol>
