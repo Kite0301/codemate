@@ -1,46 +1,50 @@
-<div class="row main-container">
-  <aside class="span4 profile-box">
-    <section>
-      <h4>
-        <%= profile_image_for @user %>
-        <%= @user.name %>
+  <div class="row main-container">
+    <aside class="span4 profile-box">
+      <section>
+        <h4>
+          <%= profile_image_for @user %>
+          <%= @user.name %>
 
-        
+          
 
-      </h4>
-      <p><%= @user.profile %></p>
-      <%= link_to '編集', edit_user_path(@user) %>
+        </h4>
+        <p><%= @user.profile %></p>
+        <%= link_to '編集', edit_user_path(@user) %>
 
-    </section>
-  </aside>
-  <div class="span8">
-    <% if @user.posts.any? %>
-    <div class="myposts">
-     <div class="timeline-navi">
-            <div class ="timeline-navi-left"></div>
-            <div class="timeline-btn-new">
-             <h4>質問</h4>
+      </section>
+    </aside>
+    <div class="span8">
+      <% if @user.posts.any? %>
+      <div class="myposts">
+       <div class="timeline-navi">
+              <div class ="timeline-navi-left"></div>
+              <div class="timeline-btn" id="show-question-btn">
+               <h4>質問</h4>
+             </div>
+             <div class ="timeline-btn-space"></div>
+
+             <div class="timeline-btn" id="show-favorite-btn">
+               <h4>お気に入り</h4>
+             </div>
+             <div class ="timeline-navi-right-mypage"></div>
            </div>
-           <div class ="timeline-btn-space"></div>
-           <div class="timeline-btn">
-             <h4>お気に入り</h4>
-           </div>
-           <div class ="timeline-navi-right-mypage"></div>
-         </div>
-      <ol class="microposts">
-        <%= render @posts %>
-      </ol>
-      <%= will_paginate @posts %>
+        <div id='show-question'>
+        <ol class="microposts">
+          <%= render @posts %>
+        </ol>
+        <%= will_paginate @posts %>
+      </div>
+      </div>
+      <div id='show-favorite'>
+         <ol class="microposts" id='show-favorite'>
+           <%= render @user.favorite_posts %>
+         </ol>  
+         
+        <%= will_paginate @posts %>
+      </div>
+      <% end %>
+      
     </div>
-       <h3>お気に入り</h3>
-       <ol class="microposts">
-         <%= render @user.favorite_posts %>
-       </ol>  
+    
        
-      <%= will_paginate @posts %>
-    <% end %>
-
   </div>
-  
-     
-</div>
