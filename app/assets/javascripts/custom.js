@@ -3,4 +3,5 @@ $(function(){
         // siblingsは兄弟
         $(this).siblings('.answer').slideToggle();
     });
+    
 });
