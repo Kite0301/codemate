@@ -17,7 +17,7 @@
           <% if signed_in? %>
                  <li id="fat-menu" class="dropdown header-item">
             <a href="#" class="" data-toggle="dropdown">
-              <%= @user.name %> <b class="caret"></b>
+              <%= current_user.name %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li class = "header-item"><%= link_to "マイページ", current_user %></li>
