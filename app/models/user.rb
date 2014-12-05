@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
 			file_name = file.original_filename
 			File.open("public/docs/#{file_name}", 'wb'){|f| f.write(file.read)}
 			self.image = file_name
+		else
+			file_name = "noimage.jpg"
+			self.image = file_name
 		end
 	end
 	def User.new_remember_token
