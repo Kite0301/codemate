@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	
 	validates :password,
-	:length => { :minimum => 8, :if => :validate_password? },
+	:length => { :minimum => 6, :if => :validate_password? },
 	:confirmation => { :if => :validate_password? },
 	:presence => true
 
