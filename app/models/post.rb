@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   has_many :favorites
   has_many :favoriting_users, through: :favorites, source: :user
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 50 }
   
 
   acts_as_taggable # acts_as_taggable_on :tags のエイリアス
