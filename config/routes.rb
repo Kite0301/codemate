@@ -15,11 +15,13 @@ Codemate::Application.routes.draw do
   match '/signin', to:'sessions#new', via:'get'
   match '/signout', to:'sessions#destroy', via:'get'
   match '/search', to: 'search#index', via: 'get' 
+  match '/posts/sort/:type', to: 'posts#sort', via: 'get', as: 'sort_post'
   
   
   # resources :users
   resources :tags
   resources :posts
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :users do
@@ -34,11 +36,5 @@ Codemate::Application.routes.draw do
 
     end
   end
-
-resources :users do
-  collection do
-    # get 'tag/:tag_name'
-  end
-end
   
 end

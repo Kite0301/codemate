@@ -14,18 +14,18 @@
       </section>
     </aside>
     <div class="span8">
-      <% if @user.posts.any? %>
+      
       <div class="myposts">
        <div class="timeline-navi">
               <div class ="timeline-navi-left"></div>
-              <div class="timeline-btn" id="show-question-btn">
-               <h4>質問</h4>
-             </div>
+               <%= link_to sort_post_path('question'), class: "timeline-btn", id: "show-question-btn", remote: true do %>
+                <h4>質問</h4>
+              <% end %>
              <div class ="timeline-btn-space"></div>
 
-             <div class="timeline-btn" id="show-favorite-btn">
-               <h4>お気に入り</h4>
-             </div>
+             <%= link_to sort_post_path('favorite'), class: "timeline-btn", id: "show-favorite-btn", remote: true do %>
+                <h4>お気に入り</h4>
+              <% end %>
              <div class ="timeline-navi-right-mypage"></div>
            </div>
         <div id='show-question'>
@@ -35,14 +35,6 @@
         <%= will_paginate @posts %>
       </div>
       </div>
-      <div id='show-favorite'>
-         <ol class="microposts" id='show-favorite'>
-           <%= render @user.favorite_posts %>
-         </ol>  
-         
-        <%= will_paginate @posts %>
-      </div>
-      <% end %>
       
     </div>
     

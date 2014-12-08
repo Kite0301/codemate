@@ -22,27 +22,29 @@
       <div class="col-md-9 content-area">
 
         <div class="span8 toplist about-timeline">
-          <% if @feed_posts.any? %>
+         
           <div class="timeline-navi">
             <div class ="timeline-navi-left"></div>
-            <div class="timeline-btn-new">
+           <%= link_to sort_post_path('new'), class: "timeline-btn", id: "timeline-new-btn", remote: true do %>
              <h4>最新</h4>
-           </div>
+           <% end %>
+
            <div class ="timeline-btn-space"></div>
-           <div class="timeline-btn">
-             <h4>人気</h4>
-           </div>
+           <%= link_to sort_post_path('popular'), class: "timeline-btn", id: "timeline-popular-btn", remote: true do %>
+            <h4>人気</h4>
+           <% end %>
            <div class="timeline-btn-space"></div>
-           <div class="timeline-btn">
+           <div class="timeline-btn" id="timeline-noanswerd-btn">
              <h4>未回答</h4>
            </div>
            <div class ="timeline-navi-right"></div>
          </div>
-         <ol class="microposts">
-          <%= render @feed_posts %>
-        </ol>
-        <%= will_paginate @feed_posts %>
-        <% end %>
+          <% if @feed_posts.any? %>
+            <ol class="microposts" id="new_posts">
+              <%= render @feed_posts %>
+            </ol>
+            <%= will_paginate @feed_posts %>
+          <% end %>
       </div>
 
       <div class ="original-side">
