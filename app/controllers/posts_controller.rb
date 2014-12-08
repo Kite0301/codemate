@@ -76,6 +76,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def sort
+    sort_type = params[:type]
+    case sort_type
+    when 'new'
+      @posts = Post.paginate(page: params[:page] , :per_page => 10)
+    when 'popular'
+      @posts = Post.all.order(:favorites_count).reverse_order
+    when 'noanswer'
+      @posts = ''
+    when 'question'
+      @posts = current_user.posts
+    when 'favorite'
+      @posts = current_user.favorite_posts
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
