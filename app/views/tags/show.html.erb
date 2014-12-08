@@ -1,5 +1,8 @@
+<div class="container">
 <h1 class = tag-list>「<%= @tag.name %>」タグ</h1>
 
-<ul class="posts">
+<ul class="microposts">
   <%= render @posts %>
 </ul>
+<%= will_paginate @posts %>
+</div>
