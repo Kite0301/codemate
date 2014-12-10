@@ -26,7 +26,10 @@
 </div>
 <div class="container answerArea">
 <% if signed_in?  %>
+<ol class="microposts">
 <%= render @post.answers  %>
+
+</ol>
 
 <%= render 'answers/form' %>
 

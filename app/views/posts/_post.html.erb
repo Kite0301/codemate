@@ -2,9 +2,12 @@
 <div class ="post-form">
 <li>
   
-  <%= link_to profile_image_for(post.user), user_path(post.user) %>
- <span class="title">タイトル: <%= link_to post.title, post %></span><br> 
+  <!-- <%= link_to profile_image_for(post.user), user_path(post.user) %> -->
+
+ <span class="title post-title"><%= link_to post.title, post %></span><br> 
   
+<div class="post-secound">
+
   <% if current_user %>
     <span id="post_<%= post.id %>">
       <%= render 'favorites/favorite_btn', post: post %>
@@ -18,13 +21,18 @@
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
   </span>
-  
-  <% if current_user?(post.user) %>
+  </div>
+  <br>
+  <i class="fa fa-tags"></i>
+  <% tag_cloud(post.tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <div class="original-tag"><%= link_to tag.name, tag_path(tag.id) %></div>
+  <% end %>
+  <!--   <% if current_user?(post.user) %>
     <br><%= link_to "投稿を削除", post, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: post.content %>
-  <% end %>
-  
+  <% end %>   -->
+
 </li>
 </div>
 
