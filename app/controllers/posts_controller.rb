@@ -84,7 +84,7 @@ class PostsController < ApplicationController
     when 'popular'
       @posts = Post.all.order(:favorites_count).reverse_order
     when 'noanswer'
-      @posts = ''
+      @posts = Post.where(answers_count: 0)
     when 'question'
       @posts = current_user.posts
     when 'favorite'
