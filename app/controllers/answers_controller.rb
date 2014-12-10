@@ -32,6 +32,7 @@ class AnswersController < ApplicationController
         AnswerMail.send_mail(@answer, @answer.post.user.email).deliver
         format.html { redirect_to @answer.post, notice: 'Answer was successfully created.' }
         format.json { render action: 'show', status: :created, location: @answer }
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @answer.errors, status: :unprocessable_entity }

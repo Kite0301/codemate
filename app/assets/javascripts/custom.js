@@ -17,6 +17,7 @@ $(function(){
     	$('#show-favorite-btn').removeClass('timeline-btn-new');
     });
    
+    $('#timeline-new-btn').addClass('timeline-btn-new');
     $('#timeline-popular-btn').click(function(){
    
         $('#timeline-popular-btn').addClass('timeline-btn-new');
