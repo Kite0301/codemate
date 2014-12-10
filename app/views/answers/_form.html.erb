@@ -13,10 +13,10 @@
   <%= f.hidden_field :post_id %>
   <%= f.hidden_field :user_id %>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.label :content, "回答する" %><br>
+    <%= f.text_area :content, :size=>"60x10" %>
   </div>
   <div class="actions">
-    <%= f.submit class: 'answer-button original-btn' %>
+    <%= f.submit "回答する",class: 'answer-button original-btn' %>
   </div>
 <% end %>
