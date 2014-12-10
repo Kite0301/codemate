@@ -30,8 +30,10 @@
 
 <%= render 'answers/form' %>
 
+<% if @post.user_id == current_user.id %>
 
 <%= link_to '編集', edit_post_path(@post) %><!--  | -->
 <%#= link_to '戻る', posts_path %>
+<% end %>
 <% end %>
 </div>

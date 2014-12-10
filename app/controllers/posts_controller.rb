@@ -80,11 +80,11 @@ class PostsController < ApplicationController
     sort_type = params[:type]
     case sort_type
     when 'new'
-      @posts = Post.paginate(page: params[:page] , :per_page => 10)
+      @posts = Post.all.order(:created_at).reverse_order.paginate(page: params[:page] , :per_page => 10)
     when 'popular'
-      @posts = Post.all.order(:favorites_count).reverse_order
+      @posts = Post.all.order(:favorites_count).reverse_order.paginate(page: params[:page] , :per_page => 10)
     when 'noanswer'
-      @posts = Post.where(answers_count: 0)
+      @posts = Post.where(answers_count: 0).paginate(page: params[:page] , :per_page => 10)
     when 'question'
       @posts = current_user.posts
     when 'favorite'
