@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212042551) do
+ActiveRecord::Schema.define(version: 20141212095945) do
 
   create_table "answers", force: true do |t|
     t.integer  "user_id"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20141212042551) do
     t.integer  "answer_to"
     t.integer  "favorites_count", default: 0
     t.integer  "answers_count",   default: 0
+    t.string   "img_post"
+    t.string   "image_post"
   end
 
   create_table "taggings", force: true do |t|

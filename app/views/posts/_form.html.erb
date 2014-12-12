@@ -11,5 +11,9 @@
 	<%= f.text_area :content, placeholder: "質問内容（1000字以内）", :size=>"60x10" %>
 </div>
 <%= f.text_field :tag_list, placeholder: "タグ（記入例：PHP, JavaScript, Android, Ajax）" %>
+<div class="field">
+        <%= f.label :image_post , "画像を添付" %>
+        <%= f.file_field :image_post %>
+ </div>
 <%= f.submit "質問する", class: "original-btn" %>
 <% end %>

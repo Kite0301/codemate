@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   def show
     @answer = Answer.new
     @tags = @post.tags
+
     
   end
 
@@ -31,7 +32,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-
+    file = params[:post][:image_post]
+    @post.set_image(file)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -101,7 +103,7 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
 
-      params.require(:post).permit(:content,:title,:tag_list)
+      params.require(:post).permit(:content,:title,:tag_list,:image_post)
     end
 
     def correct_user
