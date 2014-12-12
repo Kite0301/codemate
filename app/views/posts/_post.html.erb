@@ -1,7 +1,11 @@
 <% if(post.title) %>
 <div class ="post-form">
+
 <li>
-  
+  <div class="postlist-left">
+    <div class="post-before"></div>
+  </div>
+  <div class="postlist-right"> 
   <!-- <%= link_to profile_image_for(post.user), user_path(post.user) %> -->
 
  <span class="title post-title"><%= link_to post.title, post %></span><br> 
@@ -32,8 +36,10 @@
                                      data: { confirm: "You sure?" },
                                      title: post.content %>
   <% end %>   -->
+</div>
 
 </li>
+
 </div>
 
 <% end %>
