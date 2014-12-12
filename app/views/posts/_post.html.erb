@@ -27,11 +27,7 @@
   <% tag_cloud(post.tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
     <div class="original-tag"><%= link_to tag.name, tag_path(tag.id) %></div>
   <% end %>
-  <!--   <% if current_user?(post.user) %>
-    <br><%= link_to "投稿を削除", post, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: post.content %>
-  <% end %>   -->
+  
 
 </li>
 </div>
