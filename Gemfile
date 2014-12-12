@@ -23,6 +23,10 @@ group :test do
   # gem 'factory_girl_rails', '4.2.1'
 end
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'sass-rails', '4.0.2'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'

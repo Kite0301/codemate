@@ -32,16 +32,18 @@
 <div class ="sns-login">
   <legend>SNSでログイン</legend>
   <div class="sns-login-item">
-    <a href="#">
+    <%= link_to user_omniauth_authorize_path(:facebook) do %>
     <div class="sns-login-btn facebook-color">
-      <i class="fa fa-facebook fa-lg"></i> facebookでログイン</div>
-  </a>
+      <i class="fa fa-facebook fa-lg"></i> facebookでログイン
+    </div>
+    <% end %>
   </div>
   <div class="sns-login-item">
-    <a href="#">
+    <%= link_to user_omniauth_authorize_path(:twitter) do %>
       <div class="sns-login-btn twitter-color">
-        <i class="fa fa-twitter fa-lg"></i> twitterでログイン</div>
-      </a>
+        <i class="fa fa-twitter fa-lg"></i> twitterでログイン
+      </div>
+    <% end %>
     </div>
   <div class="sns-login-item">
     <a href="#">

@@ -1,4 +1,5 @@
 Codemate::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get "tags/search"
   get "tag_search/index"
   resources :inquiries
@@ -9,7 +10,7 @@ Codemate::Application.routes.draw do
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
-  root  'about#index'
+  
   match '/explanation', to:'sessions#explanation', via: 'get'
   match '/about', to:'about#index', via:'get'
   match '/signin', to:'sessions#new', via:'get'
@@ -36,5 +37,5 @@ Codemate::Application.routes.draw do
 
     end
   end
-  
+  root  'about#index'
 end
