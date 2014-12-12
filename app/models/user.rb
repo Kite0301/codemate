@@ -1,15 +1,15 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
 	has_many :posts, dependent: :destroy
 	has_many :answers
-	validates :name, presence: true, length: { maximum: 50 }
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-	has_secure_password
 	
-	validates :password,
-	:length => { :minimum => 6, :if => :validate_password? },
-	:confirmation => { :if => :validate_password? },
-	:presence => true
+	# validates :password,
+	# :length => { :minimum => 6, :if => :validate_password? },
+	# :confirmation => { :if => :validate_password? },
+	# :presence => true
 
 	has_many :favorites
 	has_many :favorite_posts, through: :favorites, source: :post
@@ -43,6 +43,41 @@ class User < ActiveRecord::Base
 	def unfavorite!(post)
 		favorites.find_by(post_id: post.id).destroy
 	end
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(name:     auth.extra.raw_info.name,
+                         provider: auth.provider,
+                         uid:      auth.uid,
+                         email:    auth.info.email,
+                         password: Devise.friendly_token[0,20]
+                        )
+    end
+    user
+  end
+ 
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(name:     auth.info.nickname,
+                         provider: auth.provider,
+                         uid:      auth.uid,
+                         email:    User.create_unique_email,
+                         password: Devise.friendly_token[0,20]
+                        )
+    end
+    user
+  end
+
+  def self.create_unique_string
+    SecureRandom.uuid
+  end
+ 
+  # twitterではemailを取得できないので、適当に一意のemailを生成
+  def self.create_unique_email
+    User.create_unique_string + "@example.com"
+  end
 
 	private
 
