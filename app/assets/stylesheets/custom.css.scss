@@ -1094,3 +1094,30 @@ label {
 .post-secound {
   margin-top: 5px;
 }
+
+.post-left {
+  float: left;
+  height: 87px;
+  width: 58px;
+}
+
+.post-right {
+  float: left;
+  width: 700px;
+}
+
+.post-before {
+  float: left;
+  background-image: url(/assets/post_back1.jpg);
+  background-size: 100% 100%;
+  height: 87px;
+  width: 43px;
+  border-radius: 5px;
+}
+
+.post-before h3 {
+  font-size: 25px;
+  padding: 6px 9px;
+  font-family: Georgia, Serif;
+  margin: 0px;
+}
