@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20141212095945) do
     t.integer  "answer_to"
     t.integer  "favorites_count", default: 0
     t.integer  "answers_count",   default: 0
-    t.string   "img_post"
     t.string   "image_post"
   end
 
