@@ -11,7 +11,7 @@
 
 	<p>
 	  <strong>質問内容:</strong>
-	  <%= @post.content %>
+	  <%= raw @post.content %>
 	</p>
 	<p><%= question_image_post_for @post %></p>
 	<p>
@@ -40,3 +40,6 @@
 <% end %>
 <% end %>
 </div>
+<script type="text/javascript">
+  CKEDITOR.replaceAll();
+</script>
