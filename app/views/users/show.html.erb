@@ -1,8 +1,12 @@
   <div class="row main-container">
     <aside class="span4 profile-box">
       <section>
-        <h4>
+        <div class="prof-left">
           <%= profile_image_for @user %>
+        </div>
+
+        <div class="prof-right">
+          <h4>
           <%= @user.name %>
 
           
@@ -10,7 +14,7 @@
         </h4>
         <p><%= @user.profile %></p>
         <%= link_to '編集', edit_user_path(@user) %>
-
+        </div>
       </section>
     </aside>
     <div class="span10">

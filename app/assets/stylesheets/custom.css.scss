@@ -50,7 +50,9 @@ main
 {
   padding-bottom: 71px;
   padding-top: 48px;
+  background-image: url(/assets/back.png);
 }
+
 
 // *{
 //   margin: 0;
@@ -62,16 +64,11 @@ main
 .post-show
 {
   background-color: rgba(229, 229, 229, 0.35);
-  padding: 20px;
+  // padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #aaa;
 }
-.post-title
-{
-  display: inline;
-  font-size: 20px;
-  // margin-top: 20px;
-}
+
 
 #main-logo
 {
@@ -222,7 +219,7 @@ footer {
   // padding-right: 50px;
   border-top: 1px solid #eaeaea;
   color: #999999;
-  background-color: #0a2147;
+  background-color: #bc002c;
 }
 
 .footer-logo {
@@ -466,7 +463,7 @@ input {
 
   li {
     padding: 10px 0;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #8C8C8C;
     overflow: hidden;
   }
 }
@@ -598,7 +595,7 @@ div .midashi-btn {
 }
 
 .navbar {
-  background-color: #bf404f;
+  background-color: #bc002c;
   border: none;
   height: 80px;
 }
@@ -614,7 +611,8 @@ div .midashi-btn {
 }
 
 .mainArea {
-  background-color: white;
+  // background-color: white;
+  // background-image: url(/assets/back.png);
 }
 
 .about-timeline {
@@ -825,6 +823,7 @@ label {
 
 .container {
   width: 1000px;
+  // background-image: url(/assets/back.png);
 }
 
 .about-side {
@@ -849,15 +848,15 @@ label {
   border-radius: 3px;
   color: white;
   display: inline-block;
-  background-color: #264ae4;
+  background-color: #CC342D;
   border: none;
   &:hover {
     text-decoration: none;
-    background-color: #4967e8;
+    background-color: #CC342D;
     color: white;
   }
   &:active{
-    background-color: #1838bf;
+    background-color: #CC342D;
   }
 }
 
@@ -911,15 +910,15 @@ label {
   border-radius: 3px;
   color: white;
   display: inline-block;
-  background-color: #264ae4;
+  background-color: #CC342D;
   border: none;
   &:hover {
     text-decoration: none;
-    background-color: #4967e8;
+    background-color: #CC342D;
     color: white;
   }
   &:active{
-    background-color: #1838bf;
+    background-color: #CC342D;
   }
 }
 
@@ -1080,6 +1079,7 @@ label {
 
 .post-show {
   margin-top: 80px;
+  background-color: white;
 }
 
 .answerArea {
@@ -1132,8 +1132,8 @@ label {
 
 .post-before {
   float: left;
-  background-image: url(/assets/post_after.png);
-  // background-color: #58B2DC;
+  background-image: url(/assets/after.png);
+  // background-color: #58B2DC;s
   background-size: 100% 100%;
   height: 87px;
   width: 87px;
@@ -1157,4 +1157,83 @@ label {
 
 .answer-user {
   margin-bottom: 30px;
+}
+
+.prof-left {
+ width: 60px;
+ height: auto;
+ float: left;
+}
+
+.prof-right {
+  width: 240px;
+  height: auto;
+  float: left;
+}
+
+.post-img {
+  height: 30px;
+  width: 30px;
+  float: right;
+}
+
+.post-user-name {
+  margin-top: 5px;
+  margin-left: 10px;
+  float: right;
+  font-size: 17px;
+}
+
+.post-title
+{
+  // display: inline;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
+  // height: 50px;
+
+  a {
+    color: black;
+  }
+}
+
+.post-head {
+  background-color: #DCF1F5;
+  width: 890px;
+  height: 110px;
+  // padding: 0px 10px 20px 0px;
+  float: left;
+}
+
+.post-tag {
+  margin-left: 10px;
+}
+
+.post-status2 {
+  height: 100px;
+  width: 100px;
+  background-image: url(/assets/post_status2.png);
+  background-size: 100% 100%;
+  float: left;
+}
+
+.post-main-left {
+  height: 130px;
+  background-color: #DCF1F5;
+  width: 100px;
+  float: left;
+}
+
+.post-main-right {
+  background-color: #DCF1F5;
+  width: 890px;
+  height: 110px;
+  float: left;
+  padding: 10px 10px 10px 0px;
+}
+
+.post-main-area {
+  padding: 20px;
+  float: left;
+  border-top: 1px solid #aaa;
 }
