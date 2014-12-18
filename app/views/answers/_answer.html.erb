@@ -1,14 +1,18 @@
 
 <li class="answer-list">
+  <div class="answer-img">
   <%= profile_image_for(answer.user) %>
-  <span class="user">
+  </div>
+  <div class="answer-main">  
+  <span class="user answer-user">
     <%= link_to answer.user.name, answer.user %>
   </span><br>
   
  
-  <span class="content">回答</span>
+
+  <!-- <span class="content">回答</span> -->
   <span><%= raw answer.content %></span>
-  
+
   <span class="timestamp">
     
   </span>
@@ -21,5 +25,5 @@
   <% if @post.best_answer == answer.id%>
   <i class="fa fa-check-square"></i>
   <% end %>
-  
+
 </li>

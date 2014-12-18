@@ -95,6 +95,7 @@ class PostsController < ApplicationController
       @posts = Post.where(best_answer: 0).paginate(page: params[:page] , :per_page => 10)
     end
   end
+ 
 
   def best_answer
     @post.best_answer = params[:answer_id]
