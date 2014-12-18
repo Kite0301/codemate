@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20141218062238) do
     t.integer  "favorites_count", default: 0
     t.integer  "answers_count",   default: 0
     t.string   "image_post"
-    t.integer  "BA"
     t.integer  "best_answer",     default: 0
     t.integer  "bestanswer_id"
   end
