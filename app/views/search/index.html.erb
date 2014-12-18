@@ -1,16 +1,11 @@
 <div class="container">
-<h2>「<%= @search_word %>」に該当するユーザー</h2>
-
-<ul class="users">
-  <%= render @users %>
-</ul>
 
 
 <h2>「<%= @search_word %>」に該当する質問</h2>
 
 <ul class="microposts">
   <%= render @posts %>
-  <%= render @titles %>
+  
 </ul>
-<%= will_paginate @posts %>
+
 </div>

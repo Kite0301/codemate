@@ -1,9 +1,18 @@
 class SearchController < ApplicationController
   def index 
-    @search_word = params[:word]
-    @users = User.where(['name LIKE ?', "%#{@search_word}%"]).paginate(page: params[:page])
-    @posts = Post.where(['content LIKE ?', "%#{@search_word}%"]).paginate(page: params[:page])
-    @titles = Post.where(['title LIKE ?', "%#{@search_word}%"]).paginate(page: params[:page])
+    @search_words = params[:word].split(" ")
+
+    sql = []
+
+	@search_words.each do |word|
+	    sql.push("content LIKE ('%"+ word +"%') ")
+	end
+
+	sql2 = sql.join(" OR ");
+
+	sql2 = 'SELECT "posts".* FROM "posts" WHERE ' + sql2
+
+	@posts = Post.find_by_sql("#{sql2}")
    
   end
 end
