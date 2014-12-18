@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   has_many :favorites
   has_many :favoriting_users, through: :favorites, source: :user
   validates :title, presence: true, length: { maximum: 50 }
-  
+  belongs_to :bestanswer_id
 
   acts_as_taggable # acts_as_taggable_on :tags のエイリアス
   def set_image(file)
@@ -16,4 +16,5 @@ class Post < ActiveRecord::Base
 			self.image_post = file_name
 		end
 	end
+  
 end

@@ -17,7 +17,7 @@ Codemate::Application.routes.draw do
   match '/signout', to:'sessions#destroy', via:'get'
   match '/search', to: 'search#index', via: 'get' 
   match '/posts/sort/:type', to: 'posts#sort', via: 'get', as: 'sort_post'
-  
+  match 'posts/best_answer', to: 'posts#best_answer', via: 'get'
   
   # resources :users
   resources :tags

@@ -37,6 +37,10 @@
            <%= link_to sort_post_path('noanswer'), class: "timeline-btn", id: "timeline-noanswerd-btn", remote: true do %>
             <h4>未回答</h4>
            <% end %>
+           <div class="timeline-btn-space"></div>
+           <%= link_to sort_post_path('nosolved'), class: "timeline-btn", id: "timeline-nosolved-btn", remote: true do %>
+            <h4>未解決</h4>
+           <% end %>
            <div class ="timeline-navi-right"></div>
          </div>
           <% if @feed_posts.any? %>
