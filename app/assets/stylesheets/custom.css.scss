@@ -1121,8 +1121,15 @@ label {
   font-family: Georgia, Serif;
   margin: 0px;
 }
-//answer
 
-.answer-content{
-  margin-left: 75px;
+.answer-img {
+  float: left;
+}
+
+.answer-main {
+  float: left;
+}
+
+.answer-user {
+  margin-bottom: 30px;
 }
