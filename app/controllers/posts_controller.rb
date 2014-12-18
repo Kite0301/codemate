@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :best_answer]
   before_action :signed_in_user, only: [:create, :destroy, :edit]
   before_action :correct_user,   only: [:destroy, :edit]
 
@@ -91,9 +91,18 @@ class PostsController < ApplicationController
       @posts = current_user.posts
     when 'favorite'
       @posts = current_user.favorite_posts
+    when 'nosolved'
+      @posts = Post.where(best_answer: 0).paginate(page: params[:page] , :per_page => 10)
     end
   end
  
+
+  def best_answer
+    @post.best_answer = params[:answer_id]
+    @post.save
+
+    redirect_to @post
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -53,7 +53,7 @@ class AnswersController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy

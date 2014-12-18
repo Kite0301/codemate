@@ -23,15 +23,24 @@ $(function(){
         $('#timeline-popular-btn').addClass('timeline-btn-new');
         $('#timeline-new-btn').removeClass('timeline-btn-new');
         $('#timeline-noanswerd-btn').removeClass('timeline-btn-new');
+        $('#timeline-nosolved-btn').removeClass('timeline-btn-new');
     })
      $('#timeline-new-btn').click(function(){
         $('#timeline-new-btn').addClass('timeline-btn-new');
         $('#timeline-popular-btn').removeClass('timeline-btn-new');
         $('#timeline-noanswerd-btn').removeClass('timeline-btn-new');
+        $('#timeline-nosolved-btn').removeClass('timeline-btn-new');
     })
      $('#timeline-noanswerd-btn').click(function(){
         $('#timeline-noanswerd-btn').addClass('timeline-btn-new');
         $('#timeline-new-btn').removeClass('timeline-btn-new');
         $('#timeline-popular-btn').removeClass('timeline-btn-new');
+         $('#timeline-nosolved-btn').removeClass('timeline-btn-new');
+    })
+     $('#timeline-nosolved-btn').click(function(){
+        $('#timeline-nosolved-btn').addClass('timeline-btn-new');
+        $('#timeline-new-btn').removeClass('timeline-btn-new');
+        $('#timeline-popular-btn').removeClass('timeline-btn-new');
+        $('#timeline-noanswerd-btn').removeClass('timeline-btn-new');
     })
 });
