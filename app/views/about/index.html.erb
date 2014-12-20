@@ -1,0 +1,82 @@
+
+<% if signed_in?  %>
+
+<% else %>
+
+<section class = "topArea">
+  <div class="container margin80">
+    <h1>CodeMate</h1>
+    <p class= "subtitle">日本人のためのプログラミング専門Ｑ＆Ａサイト</p>
+    <p><a class="btn-lg midashi-btn" role="button" href = "/explanation">もっと詳しく &raquo;</a></p>
+
+    <!-- <div class = "naiyou-btn"><a href="">もっと詳しく</a></div> -->
+  </div>
+
+</section>
+
+<% end %>
+
+<section class = "mainArea">
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-md-9 content-area">
+
+        <div class="span8 toplist about-timeline">
+         
+          <div class="timeline-navi">
+            <div class ="timeline-navi-left"></div>
+           <%= link_to sort_post_path('new'), class: "timeline-btn", id: "timeline-new-btn", remote: true do %>
+             <h4>最新</h4>
+           <% end %>
+
+           <div class ="timeline-btn-space"></div>
+           <%= link_to sort_post_path('popular'), class: "timeline-btn", id: "timeline-popular-btn", remote: true do %>
+            <h4>人気</h4>
+           <% end %>
+           <div class="timeline-btn-space"></div>
+           <%= link_to sort_post_path('noanswer'), class: "timeline-btn", id: "timeline-noanswerd-btn", remote: true do %>
+            <h4>未回答</h4>
+           <% end %>
+           <div class="timeline-btn-space"></div>
+           <%= link_to sort_post_path('nosolved'), class: "timeline-btn", id: "timeline-nosolved-btn", remote: true do %>
+            <h4>未解決</h4>
+           <% end %>
+           <div class ="timeline-navi-right"></div>
+         </div>
+          <% if @feed_posts.any? %>
+            <ol class="microposts" id="new_posts">
+              <%= render @feed_posts %>
+            </ol>
+            <%= will_paginate @feed_posts %>
+          <% end %>
+      </div>
+
+      <div class ="original-side">
+
+        <% if signed_in?  %>
+
+          <a class="question-btn" role="button" href="/posts/new">質問する</a>
+
+        <% end %>
+
+        <div class ="posts-number">
+          <h4>現在の質問数</h4>
+          <p><%= Post.count %></p>
+        </div>
+        <div class="col-md-3 top-side">
+          <aside>
+            <h4>人気のタグ</h4>
+            <ol class="tag-lists">
+              <% @tags.each do |tag| %>
+                <li><%= link_to tag.name, tag_path(tag.id)  , class: "original-tag" %> (<%= tag.taggings_count %>)</li>  
+              <% end %>
+              
+            </ol>
+          </aside>
+
+        </div><!--/.sidebar-->
+      </div>
+    </div><!--/.main-content-->
+
+  </section>
+

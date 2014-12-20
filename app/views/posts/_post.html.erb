@@ -1,0 +1,43 @@
+<% if(post.title) %>
+<div class ="post-form">
+<li>
+  
+  <div class="post-left">
+    <div class="post-before">
+      <!-- <h3>受付中</h3> -->
+    </div>
+  </div>
+
+  <div class="post-right">
+
+ <span class="title post-title"><%= link_to post.title, post %></span><br> 
+  
+<div class="post-secound">
+
+  <% if current_user %>
+    <span id="post_<%= post.id %>">
+      <%= render 'favorites/favorite_btn', post: post %>
+    </span>
+  <% end %>
+
+  <div id="favorite_<%= post.id %>" class="favorite-count">
+    <%= pluralize(post.favorites.count, "favorite") %>
+  </div>
+  
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </span>
+  </div>
+  <br>
+  <i class="fa fa-tags"></i>
+  <% tag_cloud(post.tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <div class="original-tag"><%= link_to tag.name, tag_path(tag.id) %></div>
+  <% end %>
+  
+
+  </div>
+</li>
+</div>
+
+<% end %>
+

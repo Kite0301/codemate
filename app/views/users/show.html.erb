@@ -1,0 +1,46 @@
+  <div class="row main-container">
+    <aside class="span4 profile-box">
+      <section>
+        <div class="prof-left">
+          <%= profile_image_for @user %>
+        </div>
+
+        <div class="prof-right">
+          <h4>
+          <%= @user.name %>
+
+          
+
+        </h4>
+        <p><%= @user.profile %></p>
+        <%= link_to '編集', edit_user_path(@user) %>
+        </div>
+      </section>
+    </aside>
+    <div class="span10">
+      
+      <div class="myposts">
+       <div class="timeline-navi">
+              <div class ="timeline-navi-left"></div>
+               <%= link_to sort_post_path('question'), class: "timeline-btn", id: "show-question-btn", remote: true do %>
+                <h4>質問</h4>
+              <% end %>
+             <div class ="timeline-btn-space"></div>
+
+             <%= link_to sort_post_path('favorite'), class: "timeline-btn", id: "show-favorite-btn", remote: true do %>
+                <h4>お気に入り</h4>
+              <% end %>
+             <div class ="timeline-navi-right-mypage"></div>
+           </div>
+        <div id='show-question'>
+        <ol class="microposts">
+          <%= render @posts %>
+        </ol>
+        <%= will_paginate @posts %>
+      </div>
+      </div>
+      
+    </div>
+    
+       
+  </div>

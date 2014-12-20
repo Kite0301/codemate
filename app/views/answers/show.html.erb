@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ユーザー:</strong>
+  <%= @answer.user_id %>
+</p>
+
+<p>
+  <strong>回答:</strong>
+  <%= raw @answer.post_id %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @answer.content %>
+</p>
+
+<%= link_to 'Edit', edit_answer_path(@answer) %> |
+<%= link_to 'Back', answers_path %>

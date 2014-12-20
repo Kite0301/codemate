@@ -1,0 +1,58 @@
+<section class = "loginArea">
+  <h1>ログイン</h1>
+
+  <div class="row">
+    <div class="span6 offset3 email-login">
+      <legend>メールアドレスでログイン</legend>
+     <!-- 値を送りたいときはform_for -->
+     <%= form_for(:session, url: user_session) do |f| %>
+     <div class = "wirteArea">
+
+      <div class="field">
+        <%= f.label :メールアドレス %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :パスワード %>
+        <%= f.password_field :password %>
+      </div>
+
+    </div>
+    <%= f.submit "ログイン", class: "login-btn" %>
+    <% end %>
+    <!-- routesをみて、最後にpathをつけるだけで、飛んでくれます。 -->
+    <p class = "hajimetedesuka">初めてですか？ <%= link_to "新規登録はこちら", new_user_path %></p>
+    <p class = "hajimetedesuka"><%= link_to "パスワードを忘れた場合はこちら"  %></p>
+  </div>
+
+<div class = "or-login">
+  または
+</div>
+
+<div class ="sns-login">
+  <legend>SNSでログイン</legend>
+  <div class="sns-login-item">
+    <%= link_to user_omniauth_authorize_path(:facebook) do %>
+    <div class="sns-login-btn facebook-color">
+      <i class="fa fa-facebook fa-lg"></i> facebookでログイン
+    </div>
+    <% end %>
+  </div>
+  <div class="sns-login-item">
+    <%= link_to user_omniauth_authorize_path(:twitter) do %>
+      <div class="sns-login-btn twitter-color">
+        <i class="fa fa-twitter fa-lg"></i> twitterでログイン
+      </div>
+    <% end %>
+    </div>
+  <div class="sns-login-item">
+    <a href="#">
+      <div class="sns-login-btn googleplus-color">
+        <i class="fa fa-google-plus fa-lg"></i> google+でログイン</div>
+      </a>
+    </div>
+
+</div>
+</div>
+
+</section>
