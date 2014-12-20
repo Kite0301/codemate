@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_password]
-  before_action :signed_in_user, only: [:edit, :update, :edit_password]
+  before_action :authenticate_user!, only: [:edit, :update, :edit_password]
   before_action :correct_user,   only: [:edit, :update, :edit_password]
   # GET /users
   # GET /users.json
@@ -70,6 +70,17 @@ class UsersController < ApplicationController
     @title = 'Favorite posts'
     @post = current_user.posts.build
     @feed_posts = current_user.favorite_posts.paginate(page: params[:page])
+    render template: 'about/index'
+  end
+
+  def good
+    @post = current_user.posts.build
+    @feed_posts = current_user.good_posts.paginate(page: params[:page])
+    render template: 'about/index'
+  end
+  def answer_good
+    @answer = current_user.answers.build
+    @feed_answers = current_user.answer_good_answers.paginate(page: params[:page])
     render template: 'about/index'
   end
 

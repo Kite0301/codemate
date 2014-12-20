@@ -22,11 +22,12 @@ Codemate::Application.routes.draw do
   # resources :users
   resources :tags
   resources :posts
-
+  resources :goods, only: [:create, :destroy]
+  resources :answer_goods, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :users do
     member do
-      get  :favorite, :edit_password
+      get  :favorite, :edit_password, :good, :answer_good
     end
   end
 

@@ -1,0 +1,5 @@
+<% if current_user.answer_good?(answer) %>
+    <%= render 'answer_goods/destroy', answer: answer %>
+<% else %>
+    <%= render 'answer_goods/create', answer: answer %>
+<% end %>

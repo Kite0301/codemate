@@ -12,12 +12,21 @@
 
   <!-- <span class="content">回答</span> -->
   <span><%= raw answer.content %></span>
-
+  <span id="answer_<%= answer.id %>">
+        <%= render 'answer_goods/answer_good_btn', answer: answer %>
+  </span>
+  <div id="answer_good_<%= answer.id %>" class="answer_good-count">
+    <%= pluralize(answer.answer_goods.count, "good") %>
+  </div>
+      
   <span class="timestamp">
     
   </span>
-  <% if current_user?(answer.user) && @post.best_answer == 0 %>
-    <%= link_to "ベストアンサーに選ぶ",posts_best_answer_path(id: answer.post.id, answer_id: answer.id) %>
+  <% if answer.post.user == current_user && @post.best_answer == 0 %>
+   <%= link_to "ベストアンサーに選ぶ",posts_best_answer_path(id: answer.post.id, answer_id: answer.id) %>
+   <% end %>
+  <% if current_user?(answer.user) %>
+   
     <%= link_to "回答を削除", answer, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: answer.content %>
