@@ -5,16 +5,16 @@
     <div class="span6 offset3 email-login">
       <legend>メールアドレスでログイン</legend>
      <!-- 値を送りたいときはform_for -->
-     <%= form_for(:session, url: user_session) do |f| %>
+     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
      <div class = "wirteArea">
 
       <div class="field">
         <%= f.label :メールアドレス %>
-        <%= f.text_field :email %>
+        <%= f.email_field :email, autofocus: true %>
       </div>
       <div class="field">
         <%= f.label :パスワード %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
     </div>
