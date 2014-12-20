@@ -29,10 +29,18 @@
 	<p>
 		<!-- <strong>質問内容:</strong> -->
 		<%= raw @post.content %>
+		<span id="post_<%= @post.id %>">
+    		<%= render 'goods/good_btn', post: @post %>
+  		</span>
+  		<div id="good_<%= @post.id %>" class="good-count">
+    		<%= pluralize(@post.goods.count, "good") %>
+ 		 </div>
+		
 	</p>
 
 </div>
 </div>
+
 <div class="container answerArea">
 	<% if signed_in?  %>
 	<ol class="microposts">

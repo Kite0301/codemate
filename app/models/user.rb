@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
 
 	has_many :favorites
 	has_many :favorite_posts, through: :favorites, source: :post
+	has_many :goods
+  	has_many :good_posts, through: :goods, source: :post
+  	has_many :answer_goods
+  	has_many :answer_good_answers, through: :answer_goods, source: :answer
 	
 	def set_image(file)
 		if !file.nil?
@@ -43,6 +47,30 @@ class User < ActiveRecord::Base
 	def unfavorite!(post)
 		favorites.find_by(post_id: post.id).destroy
 	end
+
+	def good?(post)
+	    goods.find_by(post_id: post.id)
+	end
+
+	def good!(post)
+	    goods.create!(post_id: post.id)
+	end
+
+	def ungood!(post)
+	    goods.find_by(post_id: post.id).destroy
+	end
+
+	def answer_good?(answer)
+    	answer_goods.find_by(answer_id: answer.id)
+  	end
+
+  	def answer_good!(answer)
+    	answer_goods.create!(answer_id: answer.id)
+  	end
+
+  	def unanswer_good!(answer)
+    	answer_goods.find_by(answer_id: answer.id).destroy
+  	end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first

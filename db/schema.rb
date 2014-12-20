@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218062238) do
+ActiveRecord::Schema.define(version: 20141220120637) do
+
+  create_table "answer_goods", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "answer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "answers", force: true do |t|
     t.integer  "user_id"
@@ -19,6 +26,8 @@ ActiveRecord::Schema.define(version: 20141218062238) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "answer_goods_count",  default: 0
+    t.integer  "answers_goods_count", default: 0
   end
 
   create_table "favorites", force: true do |t|
@@ -31,6 +40,13 @@ ActiveRecord::Schema.define(version: 20141218062238) do
   add_index "favorites", ["post_id"], name: "index_favorites_on_post_id"
   add_index "favorites", ["user_id", "post_id"], name: "index_favorites_on_user_id_and_post_id", unique: true
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
+
+  create_table "goods", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "inquiries", force: true do |t|
     t.string   "email"
@@ -51,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141218062238) do
     t.string   "image_post"
     t.integer  "best_answer",     default: 0
     t.integer  "bestanswer_id"
+    t.integer  "goods_count",     default: 0
   end
 
   create_table "taggings", force: true do |t|
