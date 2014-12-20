@@ -28,14 +28,17 @@ h4 {
   font-family: Hiragino Mincho ProN;
 }
 
+div {
+  font-family: Hiragino Mincho ProN;
+}
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html, body
-{
+html,body {
   height: 100%;
 }
 
@@ -43,16 +46,25 @@ html, body
 {
   min-height: 100%;
   position: relative;
-  background-color: white;
+  // background-color: white;
+  background-image: url(/assets/back.png);
+
 }
 
 main
 {
   padding-bottom: 71px;
-  padding-top: 48px;
+  // padding-top: 48px;
   background-image: url(/assets/back.png);
 }
 
+body {
+  background-image: url(/assets/back.png);
+}
+
+html,body {
+ margin:0px; padding:0px; height:100%;
+}
 
 // *{
 //   margin: 0;
@@ -219,7 +231,7 @@ footer {
   // padding-right: 50px;
   border-top: 1px solid #eaeaea;
   color: #999999;
-  background-color: #bc002c;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .footer-logo {
@@ -264,15 +276,15 @@ footer {
 .ex-top {
     // background-size: 100% 100%;
     height: 780px;
-    // background-image: url(/assets/okinawa1.jpg);
-    background-color: #0a2147;
+    background-image: url(/assets/ruby_back.jpg);
+    // background-color: #900814;
     color: white;
     border: none;
     // margin-top: 48px;
   }
 
   .ex-top h1 {
-    margin-top: 120px;
+    margin-top: 140px;
     font-size:50px;
     font-family: Hiragino Mincho ProN;
   }
@@ -288,7 +300,7 @@ footer {
     border-radius: 50px;
     color: white;
     display: inline-block;
-    box-shadow: 0 12px 0 #852C37;
+    box-shadow: 0 12px 0 #287948;
   }
 
   .ex-top-logo:active {
@@ -305,15 +317,91 @@ footer {
 
 
 .codemate-logo-color {
-  background-color: #bf404f;
+  background-color: #37A56E;
 }
 
 .logo-box{
   height:240px;
-  margin-top: 110px;
+  margin-top: 90px;
 }
 
-.ex-subtitle {
+div.ex-slide {
+  min-height: 100%;
+}
+
+#ex-home {
+
+}
+
+#ex-1 {
+
+}
+
+#ex-2 {
+
+}
+
+#ex-3 {
+
+}
+
+#ex-4 {
+
+}
+
+/* -------------------- */
+/* ▼メニューバーの作成 */
+/* -------------------- */
+#menubar {
+  position: fixed;
+  float: right;
+  top: 40%;
+  right: 25px;
+  width: 50px;
+  // background-color: rgb(185, 11, 80);
+  opacity: 0.6;
+  text-align: center;
+}
+#menubar ul {
+   /* ▼余計な余白を削除 */
+   margin: 0px;
+   padding: 0px;
+   /* ▼リストの先頭記号を削除 */
+   list-style-type: none;
+ }
+
+/* ------------------------------ */
+/* ▼メニュー項目(ボックス)の作成 */
+/* ------------------------------ */
+#menubar ul li {
+   font-size: 30px;   /* メニューの文字サイズ */
+   line-height: 1.2;  /* メニューの行高 */
+   display: inline-block; /* 各項目を横方向に並べる */
+   *display:inline; *zoom:1; /* 上記のIE7対策 */
+ }
+/* ---------------------------- */
+/* ▼メニュー項目(リンク)の装飾 */
+/* ---------------------------- */
+#menubar ul li a {
+   text-decoration: none;  /* リンクの下線を消す */
+   display: black;
+   padding: 0px 0.3em;     /* 左右に余白を設ける */
+   color: red;            /* リンクの文字色 */
+   background-color: black;
+   border-radius: 5px;
+
+ }
+ #menubar ul li a:hover {
+   /* ▼リンクの上にマウスが載った際に装飾を変更 */
+   background-color: black;
+   color: white;
+ }
+
+ .scroll-btn {
+  height: 31px;
+ }
+
+ .ex-subtitle {
   // text-align: center;
   font-family: Hiragino Mincho ProN;
   font-size: 1.75em;
@@ -331,24 +419,26 @@ footer {
 // ここから説明が始まる
 // 検索
 
+.ex-box {
+  height: 800px;
+  min-height: 100%;
+}
+
 .ex-box h1 {
-  margin-top: 50px;
+  margin-top: 120px;
   font-size:30px;
   font-family: Hiragino Mincho ProN;
+  border: none;
 }
 
 .ex-box-odd{
-  height: 470px;
   background-color: white;
   color: #bf404f;
-  border: none;
 }
 
 .ex-box-even{
-  height: 470px;
   background-color: #fef4f4;
   color: #bf404f;
-  border: none;
 }
 
 // 説明ページ"explanation"ここまで
@@ -543,7 +633,7 @@ div .midashi-btn {
     color: #0a2147;
     width: 164px;
     border-radius: 5px;
-    margin-top: 100px;
+    margin-top: 60px;
     margin-bottom: 50px;
     margin-left: 410px;
     display: inline-block;
@@ -595,7 +685,7 @@ div .midashi-btn {
 }
 
 .navbar {
-  background-color: #bc002c;
+  background-color: rgba(0, 0, 0, 0.75);
   border: none;
   height: 80px;
 }
@@ -616,7 +706,7 @@ div .midashi-btn {
 }
 
 .about-timeline {
-  margin-top: 80px;
+  margin-top: 120px;
   margin-bottom: 40px;
   margin-left: 0px;
   // margin-right: 40px;
@@ -651,14 +741,14 @@ div .midashi-btn {
 }
 
 .loginArea {
-  background-color: white;
+  // background-color: white;
 
 }
 
 .loginArea h1 {
-  margin-top: 50px;
+  margin-top: 80px;
   margin-bottom: 50px;
-  font-family: fantasy;
+  // font-family: fantasy;
   padding-top: 48px;
 }
 
@@ -874,7 +964,11 @@ label {
 }
 
 .header-contents {
+  width: auto;
+  position: center;
   padding-top: 13px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .search-box {
@@ -889,7 +983,7 @@ label {
   margin-right: auto;
   margin-left: auto;
   width: 1100px;
-  margin-top: 70px;
+  margin-top: 120px;
   margin-bottom: 50px;
 }
 
@@ -994,17 +1088,17 @@ label {
   width: 88px;
   padding: 6px 5px;
   background-color: none;
-    border-bottom: 1px solid #8C8C8C;
+  border-bottom: 1px solid #8C8C8C;
   &:hover{
-  border-top: 1px solid #8C8C8C;
-  border-right: 1px solid #8C8C8C;
-  border-bottom: 0px;
+    border-top: 1px solid #8C8C8C;
+    border-right: 1px solid #8C8C8C;
+    border-bottom: 0px;
   // border-bottom: 1px solid white;
   border-left: 1px solid #8C8C8C;
   padding-top: 5px;
   padding-right: 4px;
   padding-left: 4px;
-  }
+}
 }
 
 .timeline-btn h4{
@@ -1053,8 +1147,8 @@ label {
   border-bottom: 1px solid #8C8C8C;
 }
 .timeline-navi-right-mypage{
-   float: right;
-  height:30px;
+ float: right;
+ height:30px;
   // background-color:#e8e8e8; 
   width: 495px;
 
@@ -1090,6 +1184,11 @@ label {
 .margin80 {
   margin-top: 80px;
   margin-bottom: 80px;
+}
+
+.margin120 {
+  margin-top: 120px;
+  margin-bottom: 120px;
 }
 
 .post-form-title {
@@ -1209,10 +1308,15 @@ label {
   margin-left: 10px;
 }
 
+.post-top {
+  height: 130px;
+  border-bottom: 1px solid #aaa;
+}
+
 .post-status2 {
   height: 100px;
   width: 100px;
-  background-image: url(/assets/post_status2.png);
+  background-image: url(/assets/after.png);
   background-size: 100% 100%;
   float: left;
 }
@@ -1235,5 +1339,33 @@ label {
 .post-main-area {
   padding: 20px;
   float: left;
-  border-top: 1px solid #aaa;
+}
+
+.title-top-sub {
+  float: left;
+  font-size: 15px;
+  color: white;
+  margin-top: 23px;
+  font-family: Hiragino Mincho ProN;
+}
+
+.title-top-main {
+  float: left;
+  color: #B90B50;
+}
+
+.logo-ruby {
+  height: 133px;
+  width: 160px;
+  background-image: url(/assets/ruby_free.png);
+  background-size: 100%;
+  margin: 40px 30px 0px 30px;
+}
+
+.search-title {
+  margin-top: 120px;
+}
+
+.search-posts {
+  margin-bottom: 120px;
 }
