@@ -3,9 +3,13 @@
 <li>
   
   <div class="post-left">
-    <div class="post-before">
+    <!-- 解決済みならば -->
+    <% if @post.best_answer != 0 %>
+      <div class="post-before">
+      </div>
+    <% end %>
       <!-- <h3>受付中</h3> -->
-    </div>
+    
   </div>
 
   <div class="post-right">

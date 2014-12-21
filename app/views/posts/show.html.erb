@@ -2,7 +2,10 @@
 	<!-- <p id="notice"><%= notice %></p> -->
 	<div class="post-top">
 		<div class="post-main-left">
-			<div class="post-status2"></div>
+			<!-- ベストアンサーがあるならpost-status2を表示 -->
+			<% if @post.best_answer != 0 %>
+				<div class="post-status2"></div>
+			<% end %>
 			</div>
 			<div class="post-main-right">
 			<div class="post-head">
