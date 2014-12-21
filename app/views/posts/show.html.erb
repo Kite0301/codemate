@@ -28,13 +28,14 @@
 <div class="post-main-area">
 	<p>
 		<!-- <strong>質問内容:</strong> -->
+
 		<%= raw @post.content %>
 		<span id="post_<%= @post.id %>">
     		<%= render 'goods/good_btn', post: @post %>
   		</span>
-  		<div id="good_<%= @post.id %>" class="good-count">
+  		<span id="good_<%= @post.id %>" class="good-count">
     		<%= pluralize(@post.goods.count, "good") %>
- 		 </div>
+ 		 </span>
 		
 	</p>
 

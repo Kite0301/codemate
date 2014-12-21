@@ -43,5 +43,11 @@ $(function(){
         $('#timeline-popular-btn').removeClass('timeline-btn-new');
         $('#timeline-noanswerd-btn').removeClass('timeline-btn-new');
     })
-      
+     $('.bestanswer').hover(function(){
+         $(this).append($("<span>BA</span>"));
+        },
+        function () {
+        $(this).find("span:last").remove();
+        }
+    )
 });
