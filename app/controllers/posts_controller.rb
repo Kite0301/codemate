@@ -100,8 +100,7 @@ class PostsController < ApplicationController
   def best_answer
     @post.best_answer = params[:answer_id]
     @post.save
-
-    redirect_to @post
+    @answer = Answer.find(params[:answer_id])
   end
 
   private

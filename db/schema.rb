@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220120637) do
+ActiveRecord::Schema.define(version: 20141220122722) do
 
   create_table "answer_goods", force: true do |t|
     t.integer  "user_id"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20141220120637) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "answers_count",          default: 0
+    t.integer  "posts_count",            default: 0
+    t.integer  "point",                  default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
