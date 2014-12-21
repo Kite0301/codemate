@@ -57,7 +57,7 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
@@ -83,6 +83,7 @@ class UsersController < ApplicationController
     @feed_answers = current_user.answer_good_answers.paginate(page: params[:page])
     render template: 'about/index'
   end
+
 
   private
 

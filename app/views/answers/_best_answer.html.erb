@@ -1,0 +1,8 @@
+<% if answer.post.user == current_user && @post.best_answer == 0 %>
+   <%= link_to "ベストアンサーに選ぶ",posts_best_answer_path(id: answer.post.id, answer_id: answer.id),class: 'best_answer', remote: true %>
+   
+  <% end %>
+
+  <% if @post.best_answer == answer.id%>
+  <i class="fa fa-check-square"></i>
+  <% end %>

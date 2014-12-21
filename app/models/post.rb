@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   has_many :answers
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   validates :content, presence: true, length: { maximum: 1000 }
   # default_scope -> { order('created_at DESC') }
   has_many :favorites
