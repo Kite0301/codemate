@@ -36,8 +36,10 @@ class PostsController < ApplicationController
     @post.set_image(file)
     respond_to do |format|
       if @post.save
+        current_user.update(point: current_user.point + 1)
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -100,7 +102,9 @@ class PostsController < ApplicationController
   def best_answer
     @post.best_answer = params[:answer_id]
     @post.save
+    current_user.update(point: current_user.point + 1)
     @answer = Answer.find(params[:answer_id])
+    @answer.user.update(point: @answer.user.point + 5)
   end
 
   private

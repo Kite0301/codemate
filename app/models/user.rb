@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
 			self.image = file_name
 		end
 	end
+	
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
 	end

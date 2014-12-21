@@ -24,6 +24,7 @@
   </span>
 
     <%= render 'answers/best_answer', answer: answer %>
+    
   <% if current_user?(answer.user) %>
    
     <%= link_to "回答を削除", answer, method: :delete,
