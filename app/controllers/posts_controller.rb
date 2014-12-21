@@ -86,13 +86,13 @@ class PostsController < ApplicationController
     when 'popular'
       @posts = Post.all.order(:favorites_count).reverse_order.paginate(page: params[:page] , :per_page => 10)
     when 'noanswer'
-      @posts = Post.where(answers_count: 0).paginate(page: params[:page] , :per_page => 10)
+      @posts = Post.where(answers_count: 0).all.order(:created_at).paginate(page: params[:page] , :per_page => 10)
     when 'question'
       @posts = current_user.posts
     when 'favorite'
       @posts = current_user.favorite_posts
     when 'nosolved'
-      @posts = Post.where(best_answer: 0).paginate(page: params[:page] , :per_page => 10)
+      @posts = Post.where(best_answer: 0).all.order(:created_at).paginate(page: params[:page] , :per_page => 10)
     end
   end
  
