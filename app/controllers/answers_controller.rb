@@ -29,6 +29,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
+        current_user.update(point: current_user.point + 1)
         AnswerMail.send_mail(@answer, @answer.post.user.email).deliver
         format.html { redirect_to @answer.post, notice: 'Answer was successfully created.' }
         format.json { render action: 'show', status: :created, location: @answer }

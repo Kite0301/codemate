@@ -1,1 +1,2 @@
-$('.best_answer').html('<%= escape_javascript(render 'answers/best_answer', answer: @answer) %>');
+$('#best_answer_<%= @answer.id %>').html('<%= escape_javascript(render 'answers/best_answer', answer: @answer) %>').removeClass('bestanswer');
+$('.bestanswer').hide();
