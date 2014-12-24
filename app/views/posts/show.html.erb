@@ -3,8 +3,10 @@
 	<div class="post-top">
 		<div class="post-main-left">
 			<!-- ベストアンサーがあるならpost-status2を表示 -->
-			<% if @post.best_answer != 0 %>
-				<div class="post-status2"></div>
+			<% if @post.best_answer == 0 %>
+				<div class="post-status1"></div>
+			<% else %>
+			<div class="post-status2"></div>
 			<% end %>
 			</div>
 			<div class="post-main-right">
