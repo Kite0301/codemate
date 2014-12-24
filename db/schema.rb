@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20141220122722) do
     t.datetime "updated_at"
   end
 
+  add_index "answer_goods", ["answer_id"], name: "index_answer_goods_on_answer_id"
+  add_index "answer_goods", ["user_id", "answer_id"], name: "index_answer_goods_on_user_id_and_answer_id", unique: true
+  add_index "answer_goods", ["user_id"], name: "index_answer_goods_on_user_id"
+
   create_table "answers", force: true do |t|
     t.integer  "user_id"
     t.integer  "post_id"
@@ -48,6 +52,10 @@ ActiveRecord::Schema.define(version: 20141220122722) do
     t.datetime "updated_at"
   end
 
+  add_index "goods", ["post_id"], name: "index_goods_on_post_id"
+  add_index "goods", ["user_id", "post_id"], name: "index_goods_on_user_id_and_post_id", unique: true
+  add_index "goods", ["user_id"], name: "index_goods_on_user_id"
+
   create_table "inquiries", force: true do |t|
     t.string   "email"
     t.text     "content"
@@ -67,6 +75,7 @@ ActiveRecord::Schema.define(version: 20141220122722) do
     t.string   "image_post"
     t.integer  "best_answer",     default: 0
     t.integer  "bestanswer_id"
+    t.integer  "good_counts",     default: 0
     t.integer  "goods_count",     default: 0
   end
 

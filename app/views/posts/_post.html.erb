@@ -4,13 +4,18 @@
   
   <div class="post-left">
     <!-- 解決済みならば -->
+<<<<<<< HEAD
     <% if post.best_answer != 0 %>
       <div class="post-before">
+=======
+    <% if post.best_answer == 0 %>
+      <div class="post-before"></div>
+      <!-- <h3>受付中</h3> -->
+      <% else %>
+      <div class="post-after">
+>>>>>>> 40f416b3e01ade505913186d5e7a732ee062702f
       </div>
     <% end %>
-      <!-- <h3>受付中</h3> -->
-    
-  </div>
 
   <div class="post-right">
 
