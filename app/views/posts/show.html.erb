@@ -33,11 +33,12 @@
 <div class="post-main-area">
 	<p>
 		<!-- <strong>質問内容:</strong> -->
-
+		<% if signed_in? %>
 		<%= raw @post.content %>
 		<span id="post_<%= @post.id %>">
     		<%= render 'goods/good_btn', post: @post %>
   		</span>
+  		<% end %>
   		<span id="good_<%= @post.id %>" class="good-count">
     		<%= pluralize(@post.goods.count, "good") %>
  		 </span>
@@ -48,14 +49,14 @@
 </div>
 
 <div class="container answerArea">
-	<% if signed_in?  %>
+
 	<ol class="microposts">
 		<%= render @post.answers %>
 
 	</ol>
-
-	<%= render 'answers/form' %>
-
+	<% if signed_in? %>
+		<%= render 'answers/form' %>
+	
 	<% if @post.user_id == current_user.id %>
 
 	<%= link_to '編集', edit_post_path(@post) %><!--  | -->
