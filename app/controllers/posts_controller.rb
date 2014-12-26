@@ -84,17 +84,17 @@ class PostsController < ApplicationController
     sort_type = params[:type]
     case sort_type
     when 'new'
-      @posts = Post.all.order(:created_at).reverse_order.paginate(page: params[:page] , :per_page => 10)
+      @posts = Post.order(:created_at).limit(10).reverse_order
     when 'popular'
-      @posts = Post.all.order(:favorites_count).reverse_order.paginate(page: params[:page] , :per_page => 10)
+      @posts = Post.order(:favorites_count).limit(10).reverse_order
     when 'noanswer'
-      @posts = Post.where(answers_count: 0).all.order(:created_at).paginate(page: params[:page] , :per_page => 10)
+      @posts = Post.where(answers_count: 0).limit(10).all.order(:created_at)
     when 'question'
-      @posts = current_user.posts
+      @posts = current_user.posts.limit(10)
     when 'favorite'
-      @posts = current_user.favorite_posts
+      @posts = current_user.favorite_posts.limit(10)
     when 'nosolved'
-      @posts = Post.where(best_answer: 0).all.order(:created_at).paginate(page: params[:page] , :per_page => 10)
+      @posts = Post.where(best_answer: 0).limit(10).order(:created_at)
     end
   end
  
