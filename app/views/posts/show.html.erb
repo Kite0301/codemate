@@ -1,0 +1,68 @@
+<div class="post-show container margin120">
+	<!-- <p id="notice"><%= notice %></p> -->
+	<div class="post-top">
+		<div class="post-main-left">
+			<!-- ベストアンサーがあるならpost-status2を表示 -->
+			<% if @post.best_answer == 0 %>
+				<div class="post-status1"></div>
+			<% else %>
+			<div class="post-status2"></div>
+			<% end %>
+			</div>
+			<div class="post-main-right">
+			<div class="post-head">
+			<!-- <h1>質問</h1> -->
+			<div class="post-title">
+				<!-- <h3>タイトル :</h3> -->
+				<%= link_to @post.title, post_path %>
+
+			</div><br>
+			<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+			<div class="original-tag post-tag"><%= link_to tag.name, tag_path(tag.id) %></div>
+			<% end %>
+			<div class="post-user-name">
+				<!-- <strong>ユーザー:</strong> -->
+				<%= @post.user.name %>
+			</div>
+			<div class="post-img"><%= question_image_post_for @post %></div>
+
+		</div>
+</div>
+</div>
+
+<div class="post-main-area">
+	<p>
+		<!-- <strong>質問内容:</strong> -->
+
+		<%= raw @post.content %>
+		<span id="post_<%= @post.id %>">
+    		<%= render 'goods/good_btn', post: @post %>
+  		</span>
+  		<span id="good_<%= @post.id %>" class="good-count">
+    		<%= pluralize(@post.goods.count, "good") %>
+ 		 </span>
+		
+	</p>
+
+</div>
+</div>
+
+<div class="container answerArea">
+	<% if signed_in?  %>
+	<ol class="microposts">
+		<%= render @post.answers %>
+
+	</ol>
+
+	<%= render 'answers/form' %>
+
+	<% if @post.user_id == current_user.id %>
+
+	<%= link_to '編集', edit_post_path(@post) %><!--  | -->
+	<%#= link_to '戻る', posts_path %>
+	<% end %>
+	<% end %>
+</div>
+<script type="text/javascript">
+CKEDITOR.replaceAll();
+</script>

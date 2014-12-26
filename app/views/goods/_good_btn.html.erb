@@ -1,0 +1,5 @@
+<% if current_user.good?(post) %>
+    <%= render 'goods/destroy', post: post %>
+<% else %>
+    <%= render 'goods/create', post: post %>
+<% end %>

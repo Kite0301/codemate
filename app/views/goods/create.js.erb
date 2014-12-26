@@ -1,0 +1,2 @@
+$('#post_<%= @post.id %>').html('<%= escape_javascript(render("goods/good_btn", post: @post)) %>')
+$('#good_<%= @post.id %>').text('<%= pluralize(@post.goods.count, "good") %>');

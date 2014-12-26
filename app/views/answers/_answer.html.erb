@@ -1,0 +1,39 @@
+
+<li class="answer-list">
+  
+    <div class="answer-img">
+    <p><%= profile_image_for(answer.user) %></p>
+    <p><%= render 'answers/best_answer', answer: answer %></p>
+    </div>
+    
+  
+  <p>
+    
+  </p>
+  <div class="answer-main">  
+  <span class="user answer-user">
+    <%= link_to answer.user.name, answer.user %>
+  </span><br>
+  
+ 
+
+  <!-- <span class="content">回答</span> -->
+  <span><%= raw answer.content %></span>
+  <span id="answer_<%= answer.id %>">
+        <%= render 'answer_goods/answer_good_btn', answer: answer %>
+  </span>
+  <span id="answer_good_<%= answer.id %>" class="answer_good-count">
+    <%= pluralize(answer.answer_goods.count, "good") %>
+  </span>
+  <span class="timestamp">
+  </span>
+  <div>
+    <% if current_user?(answer.user) %>
+     
+      <%= link_to "回答を削除", answer, method: :delete,
+                                       data: { confirm: "You sure?" },
+                                       title: answer.content %>
+    <% end %>
+  </div>
+
+</li>

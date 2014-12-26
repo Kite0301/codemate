@@ -1,0 +1,8 @@
+<div class="container margin80">
+<h1 class = tag-list>「<%= @tag.name %>」タグ</h1>
+
+<ul class="microposts">
+  <%= render @posts %>
+</ul>
+<%= will_paginate @posts %>
+</div>

@@ -1,0 +1,10 @@
+<%= link_to profile_image_for(current_user), current_user %>
+<h4>
+  <%= link_to current_user.name, current_user %>
+</h4>
+
+<span>
+  　質問数：<%= pluralize(current_user.posts.count, "") %>
+   |
+  回答数：<%= pluralize(current_user.answers.count, "") %>
+</span>

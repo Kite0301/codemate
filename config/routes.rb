@@ -1,56 +1,41 @@
-Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+Codemate::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  devise_scope :user do
+    get "signout" => "devise/sessions#destroy"
+    get "signin" => "devise/sessions#new"
+  end
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get "tags/search"
+  get "tag_search/index"
+  resources :inquiries
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get "search/index"
+  resources :answers
+  
+  match '/explanation', to:'sessions#explanation', via: 'get'
+  match '/about', to:'about#index', via:'get'
+  match '/search', to: 'search#index', via: 'get' 
+  match '/posts/sort/:type', to: 'posts#sort', via: 'get', as: 'sort_post'
+  match 'posts/best_answer', to: 'posts#best_answer', via: 'get'
+  
+  # resources :users
+  resources :tags
+  resources :posts
+  resources :goods, only: [:create, :destroy]
+  resources :answer_goods, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
+  resources :users do
+    member do
+      get  :favorite, :edit_password, :good, :answer_good
+    end
+  end
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resources :posts do
+    member do
+      post :answer
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+    end
+  end
+  root  'about#index'
 end
