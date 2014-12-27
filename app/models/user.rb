@@ -80,7 +80,8 @@ class User < ActiveRecord::Base
                          provider: auth.provider,
                          uid:      auth.uid,
                          email:    auth.info.email,
-                         password: Devise.friendly_token[0,20]
+                         password: Devise.friendly_token[0,20],
+                         image:    "#{auth.info.image}?width=150&height=150"
                         )
     end
     user
@@ -92,8 +93,8 @@ class User < ActiveRecord::Base
       user = User.create(name:     auth.info.nickname,
                          provider: auth.provider,
                          uid:      auth.uid,
-                         email:    User.create_unique_email,
-                         password: Devise.friendly_token[0,20]
+                         password: Devise.friendly_token[0,20],
+                         image:    "#{auth.info.image}?width=150&height=150"
                         )
     end
     user

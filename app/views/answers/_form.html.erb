@@ -1,3 +1,4 @@
+
 <%= form_for(@post.answers.build(user_id: current_user.id, post_id: @post.id)) do |f| %>
   <% if @answer.errors.any? %>
     <div id="error_explanation">

@@ -19,9 +19,11 @@
 
   <!-- <span class="content">回答</span> -->
   <span><%= raw answer.content %></span>
+  <% if signed_in? %>
   <span id="answer_<%= answer.id %>">
         <%= render 'answer_goods/answer_good_btn', answer: answer %>
   </span>
+  <% end %>
   <span id="answer_good_<%= answer.id %>" class="answer_good-count">
     <%= pluralize(answer.answer_goods.count, "good") %>
   </span>

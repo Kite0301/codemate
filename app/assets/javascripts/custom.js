@@ -50,4 +50,5 @@ $(function(){
         $(this).find("span:last").remove();
         }
     )
+      
 });
