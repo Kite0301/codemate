@@ -47,19 +47,19 @@ html,body {
   min-height: 100%;
   position: relative;
   // background-color: white;
-  background-image: url(/assets/back.png);
+  // background-image: url(/assets/back.png);
 
 }
 
 main
 {
-  padding-bottom: 71px;
+  padding-bottom: 110px;
   // padding-top: 48px;
-  background-image: url(/assets/back.png);
+  // background-image: url(/assets/back.png);
 }
 
 body {
-  background-image: url(/assets/back.png);
+  // background-image: url(/assets/back.png);
 }
 
 html,body {
@@ -205,7 +205,7 @@ footer {
 }
 
 .footer {
-  height: 40px;
+  height: auto;
   margin-top: 0px;
   border-top-width: 0px;
   padding-top: 20px;
@@ -216,20 +216,53 @@ footer {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.main-footer {
+  height: 40px;
+}
+
 .footer-logo {
+  // margin-left: 150px;
+  width: 100px;
+  float: left;
+  margin-bottom: 0px;
+  a {
+    font-family: Monotype Corsiva;
+   font-size: 31px;
+ }
+}
+
+.footer-logo-add {
   // margin-left: 150px;
   width: 100px;
   float: left;
   margin-bottom: 0px;
   font-family: sans-serif;
   // font-style: italic;
-  font-size: 1.7em;
+  font-size: 20px;
+}
+
+.footer-item-add{
+  float: left;
+  font-family: sans-serif;
+  padding-right: 30px;
+  padding-top: 6px;
 }
 
 .footer-item{
   float: right;
   font-family: sans-serif;
   padding-right: 30px;
+}
+
+.add-footer {
+  display: none;
+    height: 40px;
+}
+
+.original-footer{
+  ul {
+    margin-left: 21px;
+  }
 }
 
 
@@ -1169,7 +1202,7 @@ label {
 
 .margin120 {
   margin-top: 120px;
-  margin-bottom: 120px;
+  // margin-bottom: 120px;
 }
 
 .post-form-title {
