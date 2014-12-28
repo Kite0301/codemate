@@ -4,14 +4,14 @@ $(function(){
 
 $('footer').hover(
 	function(){
-		console.log('show');
+		// console.log('show');
 		$('.add-footer').show('slow');
 	},
 	function(){
-		console.log('hide');
+		// console.log('hide');
 		$('.add-footer').hide('slow');
 	}
-	);
+);
 
 
 // header
