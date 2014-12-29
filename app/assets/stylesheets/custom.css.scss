@@ -1274,7 +1274,7 @@ h4 {
 .post-after {
   float: left;
   // background-image: url(/assets/after.png);
-  // background-color: #58B2DC;s
+  // background-color: #58B2DC;
   background-size: 100% 100%;
   height: 87px;
   width: 87px;
@@ -1287,7 +1287,51 @@ h4 {
   font-family: sans-serif;
   margin: 0px;
 }
+.post-answer-count-zero {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 65px;
+  color: #ccc;
+}
+.post-answer-count-zero h4{
+ margin-left: 7px;
+  color: #ccc;
+}
+.post-answer-count-nobest{
+   margin-top: 20px;
+  margin-left: 20px;
+  width: 65px;
+}
+.post-answer-count-nobest h4{
+  margin-left: 7px;
+}
+.post-answer-count{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 65px;
+  color: #e9606d;
+}
+.post-answer-count h4{
+ margin-left: 7px;
+  color: #e9606d;
+}
+.post-no-solved {
+   margin-left: 15px;
+  background: #f5f5f5;
+  width: 45px;
+  font-size: 12px;
 
+  text-align: center;
+}
+.post-solved {
+   margin-left: 15px;
+  background: #e9606d;
+  color: #fff;
+  width: 45px;
+  font-size: 12px;
+
+  text-align: center;
+}
 .answer-img {
   float: left;
 }

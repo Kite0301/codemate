@@ -1,44 +1,64 @@
 <% if(post.title) %>
-<div class ="post-form">
-<li>
-  
-  <div class="post-left">
+  <div class ="post-form">
+
+  <li>
+    
+    <div class="post-left">
     <!-- 解決済みならば -->
 
-    <% if post.best_answer == 0 %>
-      <div class="post-before"></div>
+      <% if post.best_answer == 0 %>
+        <div class="post-before">
+          <div class="post-no-solved">受付中</div>
+          <% if post.answers_count == 0 %>
+          
+            <div class="post-answer-count-zero">
+              <h6>回答</h6>
+              <h4><%= post.answers_count %></h4>
+            </div>
+          <% elsif post.answers_count != 0 %>
+              <div class="post-answer-count-nobest">
+              <h6>回答</h6>
+              <h4><%= post.answers_count %></h4>
+            </div>
+          <% end %>
+        </div>
       <!-- <h3>受付中</h3> -->
       <% else %>
-      <div class="post-after">
+        <div class="post-after">
+          <div class="post-solved">解決済</div>
+          <div class="post-answer-count">
+                <h6>回答</h6>
+                <h4><%= post.answers_count %></h4>
+            </div>
+        </div>
+      <% end %>
 
-      </div>
-    <% end %>
+    <div class="post-right">
 
-  <div class="post-right">
-
- <span class="title post-title"><%= link_to post.title, post %></span><br> 
+      <span class="title post-title"><%= link_to post.title, post %></span><br> 
   
-<div class="post-secound">
+      <div class="post-secound">
 
-  <% if current_user %>
-    <span id="post_<%= post.id %>">
-      <%= render 'favorites/favorite_btn', post: post %>
-    </span>
-  <% end %>
+      <% if current_user %>
+        <span id="post_<%= post.id %>">
+          <%= render 'favorites/favorite_btn', post: post %>
+        </span>
+      <% end %>
 
-  <div id="favorite_<%= post.id %>" class="favorite-count">
-    <%= pluralize(post.favorites.count, "favorite") %>
-  </div>
+       <div id="favorite_<%= post.id %>" class="favorite-count">
+        <%= pluralize(post.favorites.count, "favorite") %>
+        </div>
+
   
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-  </span>
-  </div>
-  <br>
-  <i class="fa fa-tags"></i>
-  <% tag_cloud(post.tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <span class="timestamp">
+        Posted <%= time_ago_in_words(post.created_at) %> ago.
+      </span>
+    </div>
+    <br>
+    <i class="fa fa-tags"></i>
+   <% tag_cloud(post.tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
     <div class="original-tag"><%= link_to tag.name, tag_path(tag.id) %></div>
-  <% end %>
+    <% end %>
   
 
   </div>
