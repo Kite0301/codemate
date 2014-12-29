@@ -1,9 +1,11 @@
 <% if answer.post.user == current_user && answer.post.best_answer == 0 %>
-   <%= link_to posts_best_answer_path(id: answer.post.id, answer_id: answer.id), id: "best_answer_#{answer.id}",class: "bestanswer", remote: true do %>
-   		<i class="fa fa-square-o fa-2x"></i>
+   <%= link_to posts_best_answer_path(id: answer.post.id, answer_id: answer.id), id: "best_answer_#{answer.id}",class: "bestanswer answer", remote: true do %>
+   		<i class="fa fa-square-o fa-2x"></i>  ベストアンサーに選ぶ
    	<% end %>
 <% end %>
 <% if answer.post.best_answer == answer.id %>
-   <i class="fa fa-check fa-2x" ></i>
+	<div class="best-trophy">
+   <i class="fa fa-trophy fa-2x"></i>　ベストアンサー
+   </div>
 <% end %>
 

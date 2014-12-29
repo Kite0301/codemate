@@ -20,11 +20,21 @@
 			<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
 			<div class="original-tag post-tag"><%= link_to tag.name, tag_path(tag.id) %></div>
 			<% end %>
+			<% if signed_in? %>
+		<div class="post_good">
+			<span id="post_<%= @post.id %>">
+	    		<%= render 'goods/good_btn', post: @post %>
+	  		</span>
+	  		<% end %>
+	  		<span id="good_<%= @post.id %>" class="good-count">
+	    		<%= pluralize(@post.goods.count, "good") %>
+ 			</span>
+ 		
 			<div class="post-user-name">
 				<!-- <strong>ユーザー:</strong> -->
 				<%= @post.user.name %>
 			</div>
-			
+		</div>	
 		</div>
 	</div>
 </div>
@@ -32,15 +42,8 @@
 <div class="post-main-area">
 	<p>
 		<!-- <strong>質問内容:</strong> -->
-		<% if signed_in? %>
 		<%= raw @post.content %>
-		<span id="post_<%= @post.id %>">
-    		<%= render 'goods/good_btn', post: @post %>
-  		</span>
-  		<% end %>
-  		<span id="good_<%= @post.id %>" class="good-count">
-    		<%= pluralize(@post.goods.count, "good") %>
- 		 </span>
+		
 		
 	</p>
 

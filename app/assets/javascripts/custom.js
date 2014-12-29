@@ -43,12 +43,12 @@ $(function(){
         $('#timeline-popular-btn').removeClass('timeline-btn-new');
         $('#timeline-noanswerd-btn').removeClass('timeline-btn-new');
     })
-     $('.bestanswer').hover(function(){
-         $(this).append($("<span>ベストアンサー</span>"));
-        },
-        function () {
-        $(this).find("span:last").remove();
-        }
-    )
+    //  $('.bestanswer').hover(function(){
+    //      $(this).append($("<span>ベストアンサー</span>"));
+    //     },
+    //     function () {
+    //     $(this).find("span:last").remove();
+    //     }
+    // )
       
 });
