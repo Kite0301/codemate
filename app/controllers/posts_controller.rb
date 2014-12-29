@@ -32,8 +32,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    file = params[:post][:image_post]
-    @post.set_image(file)
+   
     respond_to do |format|
       if @post.save
         current_user.update(point: current_user.point + 1)
