@@ -1334,6 +1334,9 @@ h4 {
 }
 .answer-img {
   float: left;
+  width: 100px;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .answer-main {
@@ -1348,6 +1351,9 @@ h4 {
  width: 60px;
  height: auto;
  float: left;
+}
+p.best_answer {
+width: 200px;
 }
 
 .prof-right {

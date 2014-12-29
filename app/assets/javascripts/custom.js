@@ -44,7 +44,7 @@ $(function(){
         $('#timeline-noanswerd-btn').removeClass('timeline-btn-new');
     })
      $('.bestanswer').hover(function(){
-         $(this).append($("<span>BA</span>"));
+         $(this).append($("<span>ベストアンサー</span>"));
         },
         function () {
         $(this).find("span:last").remove();
