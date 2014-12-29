@@ -16,20 +16,8 @@
         <%= f.file_field :image_post %>
  </div>
 
- <form action="xxx.php" method="post">
-<fieldset>
-エリア:
-<input type="text" name="yourarea" autocomplete="on" list="tokyo">
-<datalist id="tokyo">
-<option value="渋谷">
-<option value="新宿">
-<option value="池袋">
-</datalist><br>
+
 <%= f.submit "質問する", class: "original-btn" %>
-</fieldset>
-</form>
-
-
 
 <% end %>
  <script type="text/javascript">

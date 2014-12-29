@@ -1,12 +1,20 @@
+<script src = "assets/javascripts/layout.js"></script>
 <footer class="footer">
-	<div class="container">
+	<div class="container original-footer">
 		<nav>
 			<ul>
 				<li class="footer-logo"><a href="/">CodeMate</a></li>
-				<li class = "footer-item"><%= link_to "利用規約",   root_path %></li>
-				<li class = "footer-item"><%= link_to "お問い合わせ", new_inquiry_path %></li>
+				<li class="footer-item"><%= link_to "利用規約",   root_path %></li>
+				<li class="footer-item"><%= link_to "お問い合わせ", new_inquiry_path %></li>
 				<!-- <li><a href="http://news.railstutorial.jp/">News</a></li> -->
 			</ul>
+		</nav>
+	</div>
+	<div class="container add-footer">
+		<nav>
+			<ul>
+				<li class="footer-logo-add"><a href="#">会社概要</a></li>
+				<li class="footer-item-add">アクセス、採用情報、お問い合わせはこちら</li>
 		</nav>
 	</div>
 </footer>
