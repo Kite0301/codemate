@@ -891,6 +891,17 @@ label {
   border: 0;
   border-bottom: 1px solid #999999;
 }
+.email-new legend{
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #999999;
+}
 
 .or-login {
   position: absolute;
@@ -1229,6 +1240,19 @@ h4 {
   background-color: #E2E2E2;
   width: 5px;
   // border-bottom: 1px solid #8C8C8C;
+}
+.new-or-login{
+  position: absolute;
+left: 42%;
+width: 16%;
+text-align: center;
+line-height: 183px;
+
+padding-left: 50px;
+
+}
+.new_row{
+  float: left;
 }
 
 .post-show {
