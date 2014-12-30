@@ -381,6 +381,8 @@ div.ex-slide {
 }
 
 #ex-1 {
+  margin-top: 50px;
+  border-top: 1px solid #b0b0b0;
 
 }
 
@@ -393,6 +395,8 @@ div.ex-slide {
 }
 
 #ex-4 {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #b0b0b0;
 
 }
 
@@ -469,6 +473,10 @@ div.ex-slide {
 .ex-box {
   // height: 800px;
   min-height: 100%;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .ex-box h1 {
@@ -476,16 +484,21 @@ div.ex-slide {
   font-size:30px;
   font-family: sans-serif;
   border: none;
+  margin-bottom: 50px;
 }
 
 .ex-box-odd{
   background-color: white;
   color: #bf404f;
+  border-right: 1px solid #b0b0b0;
+  border-left: 1px solid #b0b0b0;
 }
 
 .ex-box-even{
-  background-color: #fef4f4;
+  background-color: white;
   color: #bf404f;
+  border-right: 1px solid #b0b0b0;
+  border-left: 1px solid #b0b0b0;
 }
 
 // 説明ページ"explanation"ここまで
@@ -1017,7 +1030,7 @@ label {
 
 .top-side {
   margin-left: 0px;
-  margin-top: 30px;
+  // margin-top: 30px;
   margin-right: 0px;
   // background-color: rgba(100, 0, 0, 0.11);
   height: 100%;
@@ -1543,4 +1556,79 @@ margin-top: 0px;
 
 .good-icon2 {
   color: #d78a92;
+}
+
+.photo1 {
+  width: 50%;
+  float: right;
+}
+
+.photo2 {
+  width: 50%;
+  float: left;
+}
+
+.photo3 {
+  width: 50%;
+  float: right;
+  margin-bottom: 150px;
+}
+
+.photo4 {
+  width: 50%;
+  float: left;
+}
+
+.photo5 {
+  width: 50%;
+  float: right;
+}
+
+.box1 {
+  width: 50%;
+  height: 300px;
+  padding-top: 93px;
+padding-left: 30px;
+}
+
+.box2 {
+  width: 49%;
+  height: 300px;
+  float: right;
+  padding-top: 120px;
+}
+
+.box3 {
+  width: 50%;
+  height: 300px;
+  float: left;
+}
+
+.box4 {
+  width: 48%;
+  height: 100px;
+  float: right;
+  padding-top: 20px;
+}
+
+.box5 {
+  width: 47%;
+  height: 300px;
+  float: left;
+  padding-top: 50px;
+padding-left: 30px;
+}
+
+
+.topBtn {
+    margin-left: 32%;
+}
+
+.topBtn a {
+  color: white;
+
+}
+
+div a .topBtn :hover {
+  color: white;
 }
