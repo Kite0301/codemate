@@ -1,44 +1,78 @@
-<div class="row">
-  <div class="span6 offset3 form-main">
+<h1>新規登録</h1>
+  <div class="new_row">
+    <div class="span6 offset3 form-main">
 
-    <%= form_for @user, html: { multipart: true} do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+      <%= form_for @user, html: { multipart: true} do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="email-new">
+          <legend>メールアドレスで登録</legend>
+        </div>
+        <div class="field">
+          <%= f.label :名前 %>
+          <%= f.text_field :name %>
+        </div>
 
-      <div class="field">
-        <%= f.label :名前 %>
-        <%= f.text_field :name %>
-      </div>
+       
+        <div class="field">
+          <%= f.label :image , "プロフィール画像" %>
+          <%= f.file_field :image %>
+        </div>
+        <div class="field">
+          <%= f.label :email , "メールアドレス" %>
+          <%= f.text_field :email %>
+        </div>
+        <div class="field">
+          <%= f.label :profile , "プロフィール（任意）" %>
+          <%= f.text_area :profile %>
+        </div>
+        <div class="field">
+          <%= f.label :password , "パスワード" %>
+          <%= f.password_field :password %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード（確認）" %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+        <div class="actions">
+          <%= f.submit "登録", class: "original-btn" %>
+        </div>
+      <% end %>
 
-     
-      <div class="field">
-        <%= f.label :image , "プロフィール画像" %>
-        <%= f.file_field :image %>
-      </div>
-      <div class="field">
-        <%= f.label :email , "メールアドレス" %>
-        <%= f.text_field :email %>
-      </div>
-      <div class="field">
-        <%= f.label :profile , "プロフィール（任意）" %>
-        <%= f.text_area :profile %>
-      </div>
-      <div class="field">
-        <%= f.label :password , "パスワード" %>
-        <%= f.password_field :password %>
-      </div>
-      <div class="field">
-        <%= f.label :password_confirmation, "パスワード（確認）" %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-      <div class="actions">
-        <%= f.submit "登録", class: "original-btn" %>
-      </div>
-
-<!--       <div class="return-btn">
-      <%= link_to '戻る', users_path %>
-      </div> -->
-
-    <% end %>
-
+    </div>
   </div>
-</div>
+    
+
+  <div class = "new-or-login">
+    または
+  </div>
+
+  <div class ="sns-login">
+    <legend>SNSで登録</legend>
+    <div class="sns-login-item">
+      <%= link_to user_omniauth_authorize_path(:facebook) do %>
+      <div class="sns-login-btn facebook-color">
+        <i class="fa fa-facebook fa-lg"></i> facebookで登録
+      </div>
+      <% end %>
+    </div>
+    <div class="sns-login-item">
+      <%= link_to user_omniauth_authorize_path(:twitter) do %>
+        <div class="sns-login-btn twitter-color">
+          <i class="fa fa-twitter fa-lg"></i> twitterで登録
+        </div>
+      <% end %>
+      </div>
+    <div class="sns-login-item">
+      <a href="#">
+        <div class="sns-login-btn googleplus-color">
+          <i class="fa fa-google-plus fa-lg"></i> google+で登録</div>
+        </a>
+      </div>
+
+    </div>
+  
+
+
+
+
+
